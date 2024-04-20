@@ -845,12 +845,14 @@ Trending Style
   overflow: hidden;
   border-radius: 25px;
   margin-bottom: 30px;
+  height: 360px;
 }
 
 .trending .item .thumb {
   position: relative;
   border-radius: 25px;
   overflow: hidden;
+  height: 220px;
 }
 
 .trending .item span.price em {
