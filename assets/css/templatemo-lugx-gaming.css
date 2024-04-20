@@ -1014,6 +1014,7 @@ Categories Style
   position: relative;
   border-radius: 25px;
   overflow: hidden;
+  height: 220px;
 }
 
 .categories .item h4 {
@@ -1499,7 +1500,7 @@ Single Page Style
 
 /* 
 ---------------------------------------------
-Contact PAge Style
+Contact Page Style
 --------------------------------------------- 
 */
 
