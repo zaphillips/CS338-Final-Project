@@ -939,12 +939,14 @@ Most Played Style
   border-radius: 25px;
   text-align: center;
   margin-bottom: 40px;
+  height: 375px;
 }
 
 .most-played .item .thumb {
   position: relative;
   border-radius: 25px;
   overflow: hidden;
+  height: 220px;
 }
 
 .most-played .item .down-content {
