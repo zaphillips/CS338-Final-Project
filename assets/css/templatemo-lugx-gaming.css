@@ -38,7 +38,10 @@ Lighter Blue: #2c3a5c
 Darker Blue (Background): #2a375a
 White (Text): #fdfdfd
 Gray: #b4b5b9
-Green (Buttons): #2a5a4d*/
+Green (Buttons): #2a5a4d
+Green (Buttons - Hover): #306959
+*/
+
 
 html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, div
 pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q,
@@ -129,12 +132,12 @@ body {
 }
 
 ::selection {
-  background: #0071f8;
+  background: #306959;
   color: #fff;
 }
 
 ::-moz-selection {
-  background: #0071f8;
+  background: #306959;
   color: #fff;
 }
 
@@ -156,7 +159,7 @@ body {
 
 .section-heading h2 em {
   font-style: normal;
-  color: #0071f8;
+  color: #306959;
 }
 
 .section-heading h6 {
@@ -181,7 +184,7 @@ body {
 }
 
 .main-button a:hover {
-  background-color: #2a375a;
+  background-color: #306959;
   color: #fff;
 }
 
@@ -258,7 +261,7 @@ Pre-loader Style
   height: 16px;
   top: 12px;
   left: 15px;
-  background: #0071f8;
+  background: #306959;
   border-radius: 50%;
   -webkit-transform: translateX(0);
   transform: translateX(0);
@@ -281,7 +284,7 @@ Pre-loader Style
   width: 16px;
   height: 16px;
   margin-left: 16px;
-  background: #0071f8;
+  background: #306959;
   border-radius: 50%;
 }
 
@@ -336,8 +339,8 @@ Header Style
   -o-transition: all 0.3s ease 0s;
   transition: all 0.3s ease 0s;
   display: inline-block;
-  width: 80px;
-  height: 80px;
+  width: 300px;
+  height: 300px;
 }
 
 .header-area .main-nav .logo h1 {
@@ -352,6 +355,8 @@ Header Style
 
 .background-header .main-nav .logo{
   margin-bottom: 18px;
+  width: 80px;
+  height: 80px;
 }
 
 .header-area .main-nav ul.nav {
@@ -404,7 +409,7 @@ Header Style
 }
 
 .header-area .main-nav .nav li:last-child:hover a {
-  background-color: #2a5a4d;
+  background-color: #306959;
 }
 
 .header-area .main-nav .nav li:hover a {
@@ -739,7 +744,7 @@ Banner Style
 }
 
 .main-banner .caption form button:hover {
-  background-color: #2a375a;
+  background-color: #306959;
 }
 
 .main-banner .right-image {
@@ -755,7 +760,7 @@ Banner Style
   right: 20px;
   top: 20px;
   border-radius: 25px;
-  background-color: #008af8;
+  background-color: #2a5a4d;
   font-size: 22px;
   text-transform: uppercase;
   font-weight: 700;
@@ -812,13 +817,13 @@ Services Style
   display: inline-block;
   text-align: center;
   line-height: 90px;
-  background-color: #2a375a;
+  background-color: #2a5a4d;
   border-radius: 50%;
   transition: all .3s;
 }
 
 .features .item:hover .image {
-  background-color: #2a5a4d;
+  background-color: #306959;
 }
 
 
@@ -862,7 +867,7 @@ Trending Style
   right: 20px;
   top: 20px;
   border-radius: 10px;
-  background-color: #008af8;
+  background-color: #2a5a4d;
   font-size: 17px;
   text-transform: uppercase;
   font-weight: 600;
@@ -903,11 +908,11 @@ Trending Style
 }
 
 .trending .item:hover .down-content h4 {
-  color: #0071f8;
+  color: #306959;
 }
 
 .trending .item:hover .down-content a {
-  background-color: #2a375a;
+  background-color: #306959;
 }
 
 
@@ -979,11 +984,11 @@ Most Played Style
 }
 
 .most-played .item:hover .down-content h4 {
-  color: #0071f8;
+  color: #306959;
 }
 
 .most-played .item:hover .down-content a {
-  background-color: #2a375a;
+  background-color: #306959;
 }
 
 
@@ -998,7 +1003,7 @@ Categories Style
 }
 
 .categories .item  {
-  background-color: #2a375a;
+  background-color: #306959;
   position: relative;
   border-radius: 25px;
   text-align: center;
@@ -1112,7 +1117,7 @@ CTA Style
 }
 
 .cta .subscribe form button:hover {
-  background-color: #2a375a;
+  background-color: #306959;
 }
 
 
@@ -1228,7 +1233,7 @@ Shop Page Style
 }
 
 .trending ul.trending-filter li a:hover {
-  color: #2a5a4d;
+  color: #306959;
 }
 
 .trending-box .item  {
@@ -1259,7 +1264,7 @@ Shop Page Style
   right: 20px;
   top: 20px;
   border-radius: 10px;
-  background-color: #008af8;
+  background-color: #2a5a4d;
   font-size: 17px;
   text-transform: uppercase;
   font-weight: 600;
@@ -1300,11 +1305,11 @@ Shop Page Style
 }
 
 .trending-box .item:hover .down-content h4 {
-  color: #0071f8;
+  color: #306959;
 }
 
 .trending-box .item:hover .down-content a {
-  background-color: #2a375a;
+  background-color: #306959;
 }
 
 .trending ul.pagination {
@@ -1369,7 +1374,7 @@ Single Page Style
 .single-product span.price {
   font-size: 27px;
   font-weight: 700;
-  color: #0071f8;
+  color: #306959;
 }
 
 .single-product span.price em {
@@ -1421,7 +1426,7 @@ Single Page Style
 }
 
 .single-product form button:hover {
-  background-color: #2a375a;
+  background-color: #306959;
 }
 
 .single-product ul {
@@ -1432,7 +1437,7 @@ Single Page Style
   display: block;
   margin: 20px 0px;
   font-size: 14px;
-  color: #0071f8;
+  color: #306959;
 }
 
 .single-product ul li:last-child {
@@ -1479,7 +1484,7 @@ Single Page Style
 }
 
 .tabs-content .nav-tabs .nav-link.active {
-  color: #0071f8;
+  color: #306959;
 }
 
 .tabs-content .tab-content {
@@ -1580,7 +1585,7 @@ Contact PAge Style
 }
 
 .contact-page .right-content form button:hover {
-  background-color: #2a375a;
+  background-color: #306959;
 }
 
 /* 
