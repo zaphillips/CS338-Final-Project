@@ -29,17 +29,16 @@ function checkCookie() {
   let user = getCookie("username");
   if (user != "") {
     alert("Welcome again " + user);
-    window.location.href = "index.html"
-  // } else {
-  //    user = prompt("Please enter your name:","");
-  //    if (user != "" && user != null) {
-  //      setCookie("username", Username, 30);
-  //    }
-   }
+  //  } else {
+  //     user = prompt("Please enter your name:","");
+  //     if (user != "" && user != null) {
+  //       setCookie("username", Username, 30);
+  //     }
+    }
 }
 </script>
 </head>
 
-//<body onload="checkCookie()"></body>
+{/* <body onload="checkCookie()"></body> */}
 
 </html>

@@ -30,7 +30,7 @@ https://templatemo.com/tm-589-lugx-gaming
 -->
   </head>
 
-<body>
+<body onload="checkCookie()">
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -77,12 +77,11 @@ https://templatemo.com/tm-589-lugx-gaming
   <!-- ***** Header Area End ***** -->
 
   <h1>Sign In </h1>
-
-  <body onload="checkCookie()"></body>
+    
 
   <div style="height: 300px;"></div>
 
-  <form method="post">
+  <form action="index.html" onsubmit="javascript:return setCookie(username, uname, 365);">>
     <div class="imgcontainer">
       <img src="logo.png" alt="Avatar" class="avatar">
     </div>
@@ -93,12 +92,8 @@ https://templatemo.com/tm-589-lugx-gaming
   
       <label for="psw"><b>Password</b></label>
       <input type="password" placeholder="Enter Password" name="psw" required>
-  
-      <button onclick type="submit">Login</button>
-      <script>setCookie("username", uname, 30)</script>
-      <label>
-        <input type="checkbox" checked="checked" name="remember"> Remember me
-      </label>
+
+      <button type="submit">Login</button>
     </div>
   
     <div class="container" style="background-color:#f1f1f1">
