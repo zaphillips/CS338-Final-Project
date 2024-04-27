@@ -1595,6 +1595,60 @@ Contact Page Style
 
 /* 
 ---------------------------------------------
+Login Page Style
+--------------------------------------------- 
+*/
+
+.login-page .center-content {
+  margin: auto;
+  width: 50%;
+}
+
+.login-page .center-content form input {
+  width: 100%;
+  height: 50px;
+  border-radius: 25px;
+  padding: 0px 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #e7e7e7;
+  font-size: 14px;
+  color: #4a4a4a;
+  margin-bottom: 30px;
+}
+
+.login-page .center-content form textarea {
+  width: 100%;
+  height: 130px;
+  border-radius: 25px;
+  padding: 20px 20px;
+  background-color: #f7f7f7;
+  border: 1px solid #e7e7e7;
+  font-size: 14px;
+  color: #4a4a4a;
+  margin-bottom: 30px;
+}
+
+.login-page .center-content form button {
+  display: inline-block;
+  height: 50px;
+  line-height: 50px;
+  background-color: #2a5a4d;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0px 25px;
+  border: none;
+  transition: all .3s;
+  border-radius: 100px;
+}
+
+.login-page .center-content form button:hover {
+  background-color: #306959;
+}
+
+/* 
+---------------------------------------------
 Responsive Style
 --------------------------------------------- 
 */

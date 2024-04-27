@@ -76,41 +76,60 @@ https://templatemo.com/tm-589-lugx-gaming
   </header>
   <!-- ***** Header Area End ***** -->
 
+  <div class="page-heading header-text">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-12">
+          <h3>Sign In</h3>
+          <span class="breadcrumb"><a href="index.html">Home</a>  /  Sign In</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- <h1>Sign In </h1> -->
     
-
-  <div style="height: 300px;"></div>
-
-  <form action="index.html" onsubmit="javascript:return setCookie(username, uname, 365);">
-    <!-- <div class="imgcontainer">
-      <img src="logo.png" alt="Avatar" class="avatar">
-    </div> -->
-  
+  <div class="login-page section">
     <div class="container">
-      <label for="uname"><b>Username</b></label>
-      <input type="text" placeholder="Enter Username" name="uname" required>
-  
-      <label for="psw"><b>Password</b></label>
-      <input type="password" placeholder="Enter Password" name="psw" required>
-
-      <button type="submit">Login</button>
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="center-content">
+            <form action="index.html" onsubmit="javascript:return setCookie(username, uname, 365);">
+                <div class="col-lg-6">
+                  <fieldset>
+                    <label for="uname"><b>Username</b></label>
+                    <input type="text" placeholder="Enter Username" name="uname" required>
+                  </fieldset>
+                </div>
+                <div class="col-lg-6">
+                  <fieldset>
+                    <label for="psw"><b>Password</b></label>
+                    <input type="password" placeholder="Enter Password" name="psw" required>
+                  </fieldset>
+                </div>
+                <div class="col-lg-6">
+                  <fieldset>
+                    <button type="submit">Login</button>
+                    <button type="button" class="cancelbtn">Cancel</button>
+                  </fieldset>
+                </div>
+                  <br>
+                  <span class="psw"><a href="#">Forgot password?</a></span>
+            </form>
+          </div>
+        </div>
+      </div>
     </div>
-  
-    <div class="container" style="background-color:#f1f1f1">
-      <button type="button" class="cancelbtn">Cancel</button>
-      <span class="psw">Forgot <a href="#">password?</a></span>
-    </div>
-  </form>
+  </div>
     
-    <style>
-      .footer {
-        position: fixed;
-      }
-      </style>
   <footer>
     <div class="container">
-      <div class="col-lg-12">
+      <div class="col-lg-12 text-center">
         <p>Copyright © 2024 Saint Anselm Gaming. All rights reserved. &nbsp;&nbsp; <a rel="nofollow" href="https://templatemo.com" target="_blank">Design: TemplateMo</a></p>
+          <script>
+            const time = new Date(); //Returns Current Time Back to Footer of Given Page
+            document.write(time);
+          </script>
       </div>
     </div>
   </footer>
@@ -125,4 +144,4 @@ https://templatemo.com/tm-589-lugx-gaming
   <script src="assets/js/custom.js"></script>
 
   </body>
-</html>l>
+</html>
