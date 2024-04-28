@@ -9,6 +9,8 @@
 
     <title>Saint Anselm Gaming - Contact Us</title>
 
+    <script src="cookie.js"></script>
+
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
@@ -28,7 +30,7 @@ https://templatemo.com/tm-589-lugx-gaming
 -->
   </head>
 
-<body>
+<body onload="checkCookie()">
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -60,7 +62,8 @@ https://templatemo.com/tm-589-lugx-gaming
                       <li><a href="shop.html">Shop</a></li>
                       <li><a href="contact.html" class="active">Contact</a></li>
                       <li><a href="#">Cart <i class="fa fa-shopping-bag"></i></a></li>
-                      <li><a href="sign-in.html">Sign In</a></li>
+                      <li class="li-button" id ="nav-login"><a href="sign-in.html">Sign In</a></li>
+                      <li class="li-button" id ="nav-account"><a href="#">Account</a></li>
                   </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>

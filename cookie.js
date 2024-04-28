@@ -1,11 +1,24 @@
-<!DOCTYPE html>
-<html>
-<head>
-<script>
-function setCookie(cname,cvalue,exdays) {
+const loginForm = document.getElementById("login-form");
+const loginButton = document.getElementById("signIn");
+
+loginButton.addEventListener("click", (e) => {
+    e.preventDefault();
+    const username = loginForm.uname.value;
+    const password = loginForm.psw.value;
+
+    if (username == "admin" && password == "admin") {
+        setCookie("Username", "admin", 265)
+        window.location.href = "admin.html" //admin.html
+    }
+    else {
+      alert("Failed Log In Attempt");
+    }
+})
+
+function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
-  let expires = "expires=" + d.toUTCString();
+  let expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
@@ -13,7 +26,7 @@ function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
-  for(let i = 0; i < ca.length; i++) {
+  for(let i = 0; i <ca.length; i++) {
     let c = ca[i];
     while (c.charAt(0) == ' ') {
       c = c.substring(1);
@@ -26,19 +39,12 @@ function getCookie(cname) {
 }
 
 function checkCookie() {
-  let user = getCookie("username");
+  let user = getCookie("Username");
   if (user != "") {
-    alert("Welcome again " + user);
-  //  } else {
-  //     user = prompt("Please enter your name:","");
-  //     if (user != "" && user != null) {
-  //       setCookie("username", Username, 30);
-  //     }
-    }
+    document.getElementById("nav-login").style.display = "none";
+    document.getElementById("nav-account").style.display = "block";
+  } else{
+    document.getElementById("nav-login").style.display = "block";
+    document.getElementById("nav-account").style.display = "none";
+  }
 }
-</script>
-</head>
-
-{/* <body onload="checkCookie()"></body> */}
-
-</html>
