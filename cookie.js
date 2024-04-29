@@ -7,6 +7,18 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.uname.value;
     const password = loginForm.psw.value;
 
+    // document.getElementById("warning-message").innerHTML="";
+
+    if (username == ""){
+      document.getElementById("warning-message").innerHTML="Invalid Username";
+      return;
+    }
+
+    if (password.length < 5){
+      document.getElementById("warning-message").innerHTML="Password Must Be At Least 5 Characters";
+      return;
+    }
+
     setCookie("Username", username, 265)
     window.location.href = "index.html"
 })
