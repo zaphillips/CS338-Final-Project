@@ -66,7 +66,12 @@ https://templatemo.com/tm-589-lugx-gaming
                       <li><a href="contact.html">Contact</a></li>
                       <li><a href="#">Cart <i class="fa fa-shopping-bag"></i></a></li>
                       <li class="li-button" id ="nav-login"><a href="sign-in.html">Sign In</a></li>
-                      <li class="li-button" id ="nav-account"><a href="#">Account</a></li>
+                      <li class="nav-item dropdown" id ="nav-account">
+                        <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                          <li id="logout-dropdown"><a class="dropdown-item" href="index.html" onclick="deleteCookie()">Log Out</a></li>
+                        </ul>
+                      </li>
                     </ul>   
                     <a class='menu-trigger'>
                         <span>Menu</span>
@@ -83,8 +88,8 @@ https://templatemo.com/tm-589-lugx-gaming
     <div class="container">
       <div class="row">
         <div class="col-lg-12">
-          <h3>Sign In</h3>
-          <span class="breadcrumb"><a href="index.html">Home</a>  /  Sign In</span>
+          <h3>Admin Dashboard</h3>
+          <span class="breadcrumb"><a href="index.html">Home</a>  /  Admin Dashboard</span>
         </div>
       </div>
     </div>
