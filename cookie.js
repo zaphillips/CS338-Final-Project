@@ -44,14 +44,16 @@ function checkCookie() {
     document.getElementById("nav-account").style.display = "block";
     document.getElementById("logout-dropdown").style.display = "block";
     document.getElementById("admin-dropdown").style.display = "block";
+    document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
   } else {
     document.getElementById("nav-login").style.display = "none";
     document.getElementById("nav-account").style.display = "block";
     document.getElementById("logout-dropdown").style.display = "block";
     document.getElementById("admin-dropdown").style.display = "none";
+    document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
   }
 }
 
 function deleteCookie() {
-  setCookie("Username", "username", 0)
+  setCookie("Username", getCookie("Username"), 0)
 }
