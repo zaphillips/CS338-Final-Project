@@ -20,7 +20,7 @@ loginButton.addEventListener("click", (e) => {
     }
 
     setCookie("Username", username, 265)
-    window.location.href = "index.html"
+    window.location.href = "index.php"
 })
 
 function setCookie(cname, cvalue, exdays) {

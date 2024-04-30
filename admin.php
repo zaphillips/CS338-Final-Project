@@ -54,13 +54,13 @@ https://templatemo.com/tm-589-lugx-gaming
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.php" class="logo">
                         <img src="assets/images/logo.png" alt="">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html">Home</a></li>
+                      <li><a href="index.php">Home</a></li>
                       <li><a href="shop.html">Shop</a></li>
                       <!-- <li><a href="product-details.html">Product Details</a></li> -->
                       <li><a href="contact.html">Contact</a></li>
@@ -71,7 +71,7 @@ https://templatemo.com/tm-589-lugx-gaming
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li><a id="greeting-dropdown" class="dropdown-item"></a></li>
                           <li id="admin-dropdown"><a class="dropdown-item active" href="#top"><u>Dashboard</u></a></li>
-                          <li id="logout-dropdown"><a class="dropdown-item" href="index.html" onclick="deleteCookie()">Log Out</a></li>
+                          <li id="logout-dropdown"><a class="dropdown-item" href="index.php" onclick="deleteCookie()">Log Out</a></li>
                         </ul>
                       </li>
                     </ul>   
@@ -91,7 +91,7 @@ https://templatemo.com/tm-589-lugx-gaming
       <div class="row">
         <div class="col-lg-12">
           <h3>Admin Dashboard</h3>
-          <span class="breadcrumb"><a href="index.html">Home</a>  /  Admin Dashboard</span>
+          <span class="breadcrumb"><a href="index.php">Home</a>  /  Admin Dashboard</span>
         </div>
       </div>
     </div>
@@ -143,11 +143,11 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        <!-- die("Connection failed: " . $conn->connect_error); -->
+        // die("Connection failed: " . $conn->connect_error);
         $message = $conn->connect_error;
-        die("<script>alert("Connection failed: " . $message)</script>");
+        die('<script>alert("Connection failed:  . $message")</script>');
       }
-      <!-- echo "Connected successfully"; -->
+      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT SUM(SoldUnits * Price) FROM sales";
@@ -157,7 +157,7 @@ https://templatemo.com/tm-589-lugx-gaming
         echo "<script>alert($result)</script>";
         } else {
           $message = $conn->error;
-          echo "<script>alert("Error Sending Query: " . $message)</script>";
+          echo '<script>alert("Error Sending Query: " . $message)</script>';
       }
       
       $conn->close();
@@ -174,11 +174,11 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        <!-- die("Connection failed: " . $conn->connect_error); -->
+        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
-        die("<script>alert("Connection failed: " . $message)</script>");
+        die('<script>alert("Connection failed: " . $message)</script>');
       }
-      <!-- echo "Connected successfully"; -->
+      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT SUM(SoldUnits * Price) *.20 FROM sales";
@@ -188,7 +188,7 @@ https://templatemo.com/tm-589-lugx-gaming
         echo "<script>alert($result)</script>";
         } else {
           $message = $conn->error;
-          echo "<script>alert("Error Sending Query: " . $message)</script>";
+          echo '<script>alert("Error Sending Query: " . $message)</script>';
       }
       
       $conn->close();
@@ -205,11 +205,11 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        <!-- die("Connection failed: " . $conn->connect_error); -->
+        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
-        die("<script>alert("Connection failed: " . $message)</script>");
+        die('<script>alert("Connection failed: " . $message)</script>');
       }
-      <!-- echo "Connected successfully"; -->
+      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT SUM(SoldUnits) FROM sales";
@@ -219,7 +219,7 @@ https://templatemo.com/tm-589-lugx-gaming
         echo "<script>alert($result)</script>";
         } else {
           $message = $conn->error;
-          echo "<script>alert("Error Sending Query: " . $message)</script>";
+          echo '<script>alert("Error Sending Query: " . $message)</script>';
       }
       
       $conn->close();
@@ -236,11 +236,11 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        <!-- die("Connection failed: " . $conn->connect_error); -->
+        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
-        die("<script>alert("Connection failed: " . $message)</script>");
+        die('<script>alert("Connection failed: " . $message)</script>');
       }
-      <!-- echo "Connected successfully"; -->
+      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
@@ -250,7 +250,7 @@ https://templatemo.com/tm-589-lugx-gaming
         echo "<script>alert($result)</script>";
         } else {
           $message = $conn->error;
-          echo "<script>alert("Error Sending Query: " . $message)</script>";
+          echo '<script>alert("Error Sending Query: " . $message)</script>';
       }
       
       $conn->close();
@@ -267,11 +267,11 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        <!-- die("Connection failed: " . $conn->connect_error); -->
+        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
-        die("<script>alert("Connection failed: " . $message)</script>");
+        die('<script>alert("Connection failed: " . $message)</script>');
       }
-      <!-- echo "Connected successfully"; -->
+      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
@@ -281,7 +281,7 @@ https://templatemo.com/tm-589-lugx-gaming
         echo "<script>alert($result)</script>";
         } else {
           $message = $conn->error;
-          echo "<script>alert("Error Sending Query: " . $message)</script>";
+          echo '<script>alert("Error Sending Query: " . $message)</script>';
       }
       
       $conn->close();
@@ -293,7 +293,7 @@ https://templatemo.com/tm-589-lugx-gaming
       $count = fread($log, 1024);
       fclose($log);
 
-      echo "<script>alert("Number of Visitors: " . $count)</script>";
+      echo '<script>alert("Number of Visitors: " . $count)</script>';
     }
 
     if(isset($POST['testConn'])) {
@@ -306,12 +306,12 @@ https://templatemo.com/tm-589-lugx-gaming
       
       // Check connection
       if ($conn->connect_error) {
-      <!-- die("Connection failed: " . $conn->connect_error); -->
+      // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
-        die("<script>alert("Connection failed: " . $message)</script>");
+        die('<script>alert("Connection failed: " . $message)</script>');
       }
       else{
-          echo "<script>alert("Apollo Connection Test was Successful")</script>";
+          echo '<script>alert("Apollo Connection Test was Successful")</script>';
       }
 
       //Close Connection
