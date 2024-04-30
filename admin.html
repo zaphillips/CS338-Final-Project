@@ -143,18 +143,21 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+        <!-- die("Connection failed: " . $conn->connect_error); -->
+        $message = $conn->connect_error;
+        die("<script>alert("Connection failed: " . $message)</script>");
       }
-      echo "Connected successfully";
+      <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT SUM(SoldUnits * Price) FROM sales";
       $result = $conn->query($sql);
 
       if ($conn->query($sql) === TRUE) {
-        echo $result;
+        echo "<script>alert($result)</script>";
         } else {
-        echo "Error Sending Query: " . $conn->error;
+          $message = $conn->error;
+          echo "<script>alert("Error Sending Query: " . $message)</script>";
       }
       
       $conn->close();
@@ -171,18 +174,21 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+        <!-- die("Connection failed: " . $conn->connect_error); -->
+        $message = $conn->connect_error;
+        die("<script>alert("Connection failed: " . $message)</script>");
       }
-      echo "Connected successfully";
+      <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT SUM(SoldUnits * Price) *.20 FROM sales";
       $result = $conn->query($sql);
 
       if ($conn->query($sql) === TRUE) {
-        echo $result;
+        echo "<script>alert($result)</script>";
         } else {
-        echo "Error Sending Query: " . $conn->error;
+          $message = $conn->error;
+          echo "<script>alert("Error Sending Query: " . $message)</script>";
       }
       
       $conn->close();
@@ -199,18 +205,21 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+        <!-- die("Connection failed: " . $conn->connect_error); -->
+        $message = $conn->connect_error;
+        die("<script>alert("Connection failed: " . $message)</script>");
       }
-      echo "Connected successfully";
+      <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT SUM(SoldUnits) FROM sales";
       $result = $conn->query($sql);
 
       if ($conn->query($sql) === TRUE) {
-        echo $result;
+        echo "<script>alert($result)</script>";
         } else {
-        echo "Error Sending Query: " . $conn->error;
+          $message = $conn->error;
+          echo "<script>alert("Error Sending Query: " . $message)</script>";
       }
       
       $conn->close();
@@ -227,18 +236,21 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+        <!-- die("Connection failed: " . $conn->connect_error); -->
+        $message = $conn->connect_error;
+        die("<script>alert("Connection failed: " . $message)</script>");
       }
-      echo "Connected successfully";
+      <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
       $result = $conn->query($sql);
 
       if ($conn->query($sql) === TRUE) {
-        echo $result;
+        echo "<script>alert($result)</script>";
         } else {
-        echo "Error Sending Query: " . $conn->error;
+          $message = $conn->error;
+          echo "<script>alert("Error Sending Query: " . $message)</script>";
       }
       
       $conn->close();
@@ -255,25 +267,33 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+        <!-- die("Connection failed: " . $conn->connect_error); -->
+        $message = $conn->connect_error;
+        die("<script>alert("Connection failed: " . $message)</script>");
       }
-      echo "Connected successfully";
+      <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
       $result = $conn->query($sql);
 
       if ($conn->query($sql) === TRUE) {
-        echo $result;
+        echo "<script>alert($result)</script>";
         } else {
-        echo "Error Sending Query: " . $conn->error;
+          $message = $conn->error;
+          echo "<script>alert("Error Sending Query: " . $message)</script>";
       }
       
       $conn->close();
     }
 
     if(isset($POST['visitors'])) {
-      echo("Test");
+      //Opens Vistor Log to and Returns How Many Times the Website has been Visited
+      $log = fopen("visitorLog.txt", "r");
+      $count = fread($log, 1024);
+      fclose($log);
+
+      echo "<script>alert("Number of Visitors: " . $count)</script>";
     }
 
     if(isset($POST['testConn'])) {
@@ -286,10 +306,12 @@ https://templatemo.com/tm-589-lugx-gaming
       
       // Check connection
       if ($conn->connect_error) {
-      die("Connection failed: " . $conn->connect_error);
+      <!-- die("Connection failed: " . $conn->connect_error); -->
+        $message = $conn->connect_error;
+        die("<script>alert("Connection failed: " . $message)</script>");
       }
       else{
-          echo("Connected successfully");
+          echo "<script>alert("Apollo Connection Test was Successful")</script>";
       }
 
       //Close Connection
