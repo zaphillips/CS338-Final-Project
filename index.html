@@ -45,6 +45,22 @@ https://templatemo.com/tm-589-lugx-gaming
   </div>
   <!-- ***** Preloader End ***** -->
 
+  <!-- Visitor Hit Counter -->
+  <?php
+    //Opens Vistor Log to and Returns How Many Times the Website has been Visited
+    $log = fopen("visitorLog.txt", "r");
+    $count = fread($log, 1024);
+    fclose($log);
+
+    //Updates Hit Counter
+    $count = $count + 1; 
+
+    //Overwrites Previous Entry in Log File to Complete the Update
+    $log = fopen("visitorLog.txt", "w")
+    fwrite("$log, $count")
+    fclose($log)
+  ?>
+
   <!-- ***** Header Area Start ***** -->
   <header class="header-area header-sticky">
     <div class="container">
