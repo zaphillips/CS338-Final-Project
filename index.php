@@ -68,13 +68,13 @@ https://templatemo.com/tm-589-lugx-gaming
             <div class="col-12">
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
-                    <a href="index.html" class="logo">
+                    <a href="index.php" class="logo">
                         <img src="assets/images/logo.png" alt="Saint Anselm Gaming Logo">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
-                      <li><a href="index.html" class="active">Home</a></li>
+                      <li><a href="index.php" class="active">Home</a></li>
                       <li><a href="shop.html">Shop</a></li>
                       <!-- <li><a href="product-details.html">Product Details</a></li> -->
                       <li><a href="contact.html">Contact</a></li>
@@ -84,8 +84,8 @@ https://templatemo.com/tm-589-lugx-gaming
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li><a id="greeting-dropdown" class="dropdown-item"></a></li>
-                          <li id="admin-dropdown"><a class="dropdown-item" href="admin.html">Dashboard</a></li>
-                          <li id="logout-dropdown"><a class="dropdown-item" href="index.html" onclick="deleteCookie()">Log Out</a></li>
+                          <li id="admin-dropdown"><a class="dropdown-item" href="admin.php">Dashboard</a></li>
+                          <li id="logout-dropdown"><a class="dropdown-item" href="index.php" onclick="deleteCookie()">Log Out</a></li>
                         </ul>
                       </li>
                     </ul>   
