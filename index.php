@@ -57,7 +57,7 @@ https://templatemo.com/tm-589-lugx-gaming
 
     //Overwrites Previous Entry in Log File to Complete the Update
     $log = fopen("visitorLog.txt", "w");
-    fwrite("$log, $count");
+    fwrite($log, $count);
     fclose($log);
   ?>
 
