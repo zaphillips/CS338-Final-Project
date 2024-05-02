@@ -143,22 +143,28 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        // die("Connection failed: " . $conn->connect_error);
-        $message = $conn->connect_error;
-        die('<script>alert("Connection Failed: '.$message.'")</script>');
+        die("Connection failed: " . $conn->connect_error);
+        // $message = $conn->connect_error;
+        // die('<script>alert("Connection Failed: '.$message.'")</script>');
+        // echo '<script>alert("Connection Failed: ' .$message.'")</script>';
       }
       // <!-- echo "Connected successfully"; -->
 
       //Query
-      $sql = "SELECT SUM(SoldUnits * Price) FROM sales";
+      $sql = "SELECT SUM(SoldUnits * Price) as 'Total Sales' FROM sales";
+      // $sql = "SELECT * FROM sales";
       $result = $conn->query($sql);
 
-      // if ($result === TRUE) {
-        echo '<script>alert("'.$result.'")</script>'; //$result->fetch_assoc()
-      //   } else {
-      //     $message = $conn->error;
-      //     echo '<script>alert("Error Sending Query: '.$message.'")</script>';
-      // }
+      if ($result == TRUE) {
+        // $record = mysqli_fetch_array($result['Total Sales']);
+        $record = mysqli_fetch_array($result);
+        // echo '<script>alert("SELECT Statement is Correct and Sent")</script>'; //$result->fetch_assoc()
+        echo '<script>alert("'. $record['Total Sales'] .'")</script>';
+        echo $record['Total Sales'];
+        } else {
+          $message = $conn->error;
+          echo '<script>alert("Error Sending Query: '.$message.'")</script>';
+      }
       
       $conn->close();
     }

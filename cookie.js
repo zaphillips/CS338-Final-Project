@@ -17,8 +17,8 @@ loginButton.addEventListener("click", (e) => {
       return;
     }
 
-    setCookie("Username", username, 265)
-    window.location.href = "index.php"
+    setCookie("Username", username, 265);
+    window.location.href = "index.php";
 })
 
 function setCookie(cname, cvalue, exdays) {
@@ -63,13 +63,19 @@ function checkCookie(cname) {
       document.getElementById("admin-dropdown").style.display = "none";
       document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
     }
+    return true;
   }
 
   if(cname == "Cart"){
-    return true;
+    let cart = getCookie("Cart");
+    if (cart == ""){
+      return false;
+    }else{
+      return true;
+    }
   }
 }
 
 function deleteCookie() {
-  setCookie("Username", getCookie("Username"), 0)
+  setCookie("Username", getCookie("Username"), 0);
 }
