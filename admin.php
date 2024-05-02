@@ -145,7 +145,7 @@ https://templatemo.com/tm-589-lugx-gaming
       if ($conn->connect_error) {
         // die("Connection failed: " . $conn->connect_error);
         $message = $conn->connect_error;
-        die('<script>alert("Connection failed:  . $message")</script>');
+        die('<script>alert("Connection failed: " . $message)</script>');
       }
       // <!-- echo "Connected successfully"; -->
 
