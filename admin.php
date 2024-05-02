@@ -300,9 +300,10 @@ https://templatemo.com/tm-589-lugx-gaming
       $servername = "apollo.anselm.edu";
       $username = "team5";
       $password = "team5pass";
+      $database = "DBteam5";
       
       // Create connection
-      $conn = new mysqli($servername, $username, $password);
+      $conn = new mysqli($servername, $username, $password, $database);
       
       // Check connection
       if ($conn->connect_error) {
