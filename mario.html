@@ -10,6 +10,7 @@
     <title>Saint Anselm Gaming - Mario Party Superstars</title>
 
     <script src="cookie.js"></script>
+    <script src="cart.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -110,9 +111,9 @@ https://templatemo.com/tm-589-lugx-gaming
              star-stealing ghosts, and the troublemaking Bowser, you can turn the tables on your friends
              and family in an instant. Want to play with far-off friends and family? All modes can be played online!
           </p>
-          <form id="qty" action="#">
-            <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
-            <button type="submit"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
+          <form id="mario-amount-form" onsubmit="mario()" action="cart.html">
+            <input type="qty" class="form-control" id="mario-amount" aria-describedby="quantity" placeholder="1">
+            <button type="submit" id="mario-button"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
           </form>
           <ul>
             <li><span>Genre:</span> Party, Multiplayer</li>

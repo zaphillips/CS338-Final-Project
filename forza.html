@@ -10,6 +10,7 @@
     <title>Saint Anselm Gaming - Forza Horizon 5</title>
 
     <script src="cookie.js"></script>
+    <script src="cart.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -108,9 +109,9 @@ https://templatemo.com/tm-589-lugx-gaming
              greatest cars. Blast off into Forza Horizon 5: Hot Wheels or Conquer the Sierra Nueva in the ultimate
              Horizon Rally Adventure experience. Requires Forza Horizon 5 game, expansion sold separately.
           </p>
-          <form id="qty" action="#">
-            <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
-            <button type="submit"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
+          <form id="forza-amount-form" onsubmit="forza()" action="cart.html">
+            <input type="qty" class="form-control" id="forza-amount" aria-describedby="quantity" placeholder="1">
+            <button type="submit" id="forza-button"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
           </form>
           <ul>
             <li><span>Genre:</span> Racing, Multiplayer</li>

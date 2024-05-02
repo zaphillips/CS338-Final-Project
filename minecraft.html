@@ -10,6 +10,7 @@
     <title>Saint Anselm Gaming - Minecraft</title>
 
     <script src="cookie.js"></script>
+    <script src="cart.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -109,9 +110,9 @@ https://templatemo.com/tm-589-lugx-gaming
              but when night falls be sure to seek safety from monsters like the skeleton horseman and zombie villager. Conquer alone or with your friends via 
              split screen mode or online. The only limit is your imagination.
           </p>
-          <form id="qty" action="#">
-            <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
-            <button type="submit"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
+          <form id="minecraft-amount-form" onsubmit="minecraft()" action="cart.html">
+            <input type="qty" class="form-control" id="minecraft-amount" aria-describedby="quantity" placeholder="1">
+            <button type="submit" id="minecraft-button"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
           </form>
           <ul>
             <li><span>Genre:</span> Survival, Multiplayer</li>

@@ -10,6 +10,7 @@
     <title>Saint Anselm Gaming - Baldur's Gate 3</title>
 
     <script src="cookie.js"></script>
+    <script src="cart.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -105,9 +106,9 @@ https://templatemo.com/tm-589-lugx-gaming
           <h4>Baldur's Gate 3</h4>
           <span class="price"><em>$60</em> $0</span>
           <p>Gather your party, and return to the Forgotten Realms in a tale of fellowship and betrayal, sacrifice and survival, and the lure of absolute power. Mysterious abilities are awakening inside you, drawn from a Mind Flayer parasite planted in your brain. Resist, and turn darkness against itself. Or embrace corruption, and become ultimate evil. From the creators of Divinity: Original Sin 2 comes a next-generation RPG, set in the world of Dungeons and Dragons. Choose from a wide selection of D&D races and classes, or play as an original character with a hand-crafted background. Adventure, loot, battle, and romance as you journey through the Forgotten Realms and beyond. Play alone, and select your companions carefully, or as a party of up to four in multiplayer. Abducted, infected, lost. You are turning into a monster, but as the corruption inside you grows, so does your power. That power may help you to survive, but there will be a price to pay, and more than any ability, the bonds of trust that you build within your party could be your greatest strength. Caught in a conflict between devils, deities, and sinister otherworldly forces, you will determine the fate of the Forgotten Realms together.</p>
-          <form id="qty" action="#">
-            <input type="qty" class="form-control" id="1" aria-describedby="quantity" placeholder="1">
-            <button type="submit"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
+          <form id="baldurs-amount-form" onsubmit="baldursGate()" action="cart.html">
+            <input type="qty" class="form-control" id="baldurs-amount" aria-describedby="quantity" placeholder="1" value="1">
+            <button type="submit" id="baldurs-button"><i class="fa fa-shopping-bag"></i> ADD TO CART</button>
           </form>
           <ul>
             <li><span>Genre:</span> Role-Playing, Team, Single-Player</li>

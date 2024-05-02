@@ -12,6 +12,7 @@
     <title>Saint Anselm Gaming - Cart</title>
 
     <script src="cookie.js"></script>
+    <script src="cart.js"></script>
 
     <!-- Bootstrap core CSS -->
     <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -32,7 +33,7 @@ https://templatemo.com/tm-589-lugx-gaming
 -->
   </head>
 
-<body onload="checkCookie()">
+<body onload="checkCookie(), setQuantities()">
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -96,16 +97,104 @@ https://templatemo.com/tm-589-lugx-gaming
       </div>
     </div>
   </div>
-    
+
   <div class="cart-page section">
-    <div class="container">
-      <div class="header">
-        <h2>Cart</h2>
+    <div class="header">
+      <h1>Cart</h1>
+    </div>
+    <div class="header" id="empty-message">
+      <h2>Your Cart is Empty</h2>
+    </div>
+    <div class="container" id="cart-grid">
+      <div class="row column-titles">
+        <div class="col-lg justify-content-center">
+          <h4>Item</h4>
+        </div>
+        <div class="col-md justify-content-center">
+          <h4>Quantity</h4>
+        </div>
+        <div class="col-md justify-content-center">
+          <h4>Subtotal</h4>
+        </div>
       </div>
-      <div class="row">
-        <div class="col-lg">Item Picture/Title</div>
-        <div class="col-sm">Item Subtotal</div>
-        <div class="col-sm">Quantity</div>
+      <div class="row game" id="baldurs">
+        <div class="col-lg">
+          <h6>Baldur's <br>Gate 3</h6>
+          <img src="assets/images/categories-06.jpg">
+        </div>
+        <div class="col-md justify-content-center">
+          <form name="baldurs-form">
+            <input name="quantity" type="number" class="form-control" id="baldurs-qty" aria-describedby="quantity" placeholder="0" min="0" max="99" onchange="updateSubtotals()">
+          </form>
+        </div>
+        <div id="baldurs-subtotal" class="col-md justify-content-center">$0</div>
+      </div>
+      <div class="row game" id="forza">
+        <div class="col-lg">
+          <h6>Forza <br>Horizon 5</h6>
+          <img src="assets/images/categories-04.jpg">
+        </div>
+        <div class="col-md justify-content-center">
+          <form name="forza-form">
+            <input name="quantity" type="number" class="form-control" id="forza-qty" aria-describedby="quantity" placeholder="0" min="0" max="99" onchange="updateSubtotals()">
+          </form>
+        </div>
+        <div id="forza-subtotal" class="col-md justify-content-center">$0</div>
+      </div>
+      <div class="row game" id="mario">
+        <div class="col-lg">
+          <h6>Mario<br>Party<br>Superstars</h6>
+          <img src="assets/images/categories-05.jpg">
+        </div>
+        <div class="col-md justify-content-center">
+          <form name="mario-form">
+            <input name="quantity" type="number" class="form-control" id="mario-qty" aria-describedby="quantity" placeholder="0" min="0" max="99" onchange="updateSubtotals()">
+          </form>
+        </div>
+        <div id="mario-subtotal" class="col-md justify-content-center">$0</div>
+      </div>
+      <div class="row game" id="minecraft">
+        <div class="col-lg">
+          <h6>Minecraft</h6>
+          <img src="assets/images/categories-02.jpg">
+        </div>
+        <div class="col-md justify-content-center">
+          <form name="minecraft-form" method="post">
+            <input name="quantity" type="number" class="form-control" id="minecraft-qty" aria-describedby="quantity" placeholder="0" min="0" max="99" onchange="updateSubtotals()">
+          </form>
+        </div>
+        <div id="minecraft-subtotal" class="col-md justify-content-center">$0</div>
+      </div>
+      <div class="row game" id="ssbu">
+        <div class="col-lg">
+          <h6>Super<br>Smash Bros.<br>Ultimate</h6>
+          <img src="assets/images/categories-03.jpg">
+        </div>
+        <div class="col-md justify-content-center">
+          <form name="ssbu-form" method="post">
+            <input name="quantity" type="number" class="form-control" id="ssbu-qty" aria-describedby="quantity" placeholder="0" min="0" max="99" onchange="updateSubtotals()">
+          </form>
+        </div>
+        <div id="ssbu-subtotal" class="col-md justify-content-center">$0</div>
+      </div>
+      <div class="row game" id="totk">
+        <div class="col-lg">
+          <h6>The Legend <br> of Zelda:<br> TOTK</h6>
+          <img src="assets/images/categories-01.jpg">
+        </div>
+        <div class="col-md justify-content-center">
+          <form name="zelda-form">
+            <input name="quantity" type="number" class="form-control" id="zelda-qty" aria-describedby="quantity" placeholder="0" min="0" max="99" onchange="updateSubtotals()">
+          </form>
+        </div>
+        <div id="zelda-subtotal" class="col-md justify-content-center">$0</div>
+      </div>
+      <hr>
+      <div id="purchase-section">
+        <form id="purchase-form" method="post">
+          <button id = "purchase" type="submit">Complete Purchase</button>
+        </form>
+        <h6>Total:</h6>
       </div>
     </div>
   </div>

@@ -7,9 +7,7 @@ loginButton.addEventListener("click", (e) => {
     const username = loginForm.uname.value;
     const password = loginForm.psw.value;
 
-    // document.getElementById("warning-message").innerHTML="";
-
-    if (username == ""){
+      if (username == ""){
       document.getElementById("warning-message").innerHTML="Invalid Username";
       return;
     }
