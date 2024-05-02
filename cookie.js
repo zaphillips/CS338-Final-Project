@@ -44,23 +44,29 @@ function getCookie(cname) {
   return "";
 }
 
-function checkCookie() {
-  let user = getCookie("Username");
-  if (user == "") {
-    document.getElementById("nav-login").style.display = "block";
-    document.getElementById("nav-account").style.display = "none";
-  } else if (user == "admin"){
-    document.getElementById("nav-login").style.display = "none";
-    document.getElementById("nav-account").style.display = "block";
-    document.getElementById("logout-dropdown").style.display = "block";
-    document.getElementById("admin-dropdown").style.display = "block";
-    document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
-  } else {
-    document.getElementById("nav-login").style.display = "none";
-    document.getElementById("nav-account").style.display = "block";
-    document.getElementById("logout-dropdown").style.display = "block";
-    document.getElementById("admin-dropdown").style.display = "none";
-    document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
+function checkCookie(cname) {
+  if(cname == "Username"){
+    let user = getCookie("Username");
+    if (user == "") {
+      document.getElementById("nav-login").style.display = "block";
+      document.getElementById("nav-account").style.display = "none";
+    } else if (user == "admin"){
+      document.getElementById("nav-login").style.display = "none";
+      document.getElementById("nav-account").style.display = "block";
+      document.getElementById("logout-dropdown").style.display = "block";
+      document.getElementById("admin-dropdown").style.display = "block";
+      document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
+    } else {
+      document.getElementById("nav-login").style.display = "none";
+      document.getElementById("nav-account").style.display = "block";
+      document.getElementById("logout-dropdown").style.display = "block";
+      document.getElementById("admin-dropdown").style.display = "none";
+      document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
+    }
+  }
+
+  if(cname == "Cart"){
+    return true;
   }
 }
 
