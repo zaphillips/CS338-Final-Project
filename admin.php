@@ -108,13 +108,6 @@ https://templatemo.com/tm-589-lugx-gaming
               <div class="col-lg-12">
                 <fieldset>
                   <form method = "POST">
-<!-- 
-                  <input type="submit" name="button1"
-                            class="button" value="Button1" /> 
-                      
-                    <input type="submit" name="button2"
-                            class="button" value="Button2" /> -->
-                            
                     <button name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
                     <button name = "tax" type="submit">Calculate Tax Incurred on Total Sales Made By Site</button>
                     <button name = "numProdSold" type="submit">Calculate Number of Products Sold</button>
@@ -143,29 +136,21 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
-        // $message = $conn->connect_error;
-        // die('<script>alert("Connection Failed: '.$message.'")</script>');
-        // echo '<script>alert("Connection Failed: ' .$message.'")</script>';
+        $message = $conn->connect_error;
+        die('<script>alert("Connection Failed: '.$message.'")</script>');
       }
-      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT SUM(SoldUnits * Price) as 'Total Sales' FROM sales";
-      // $sql = "SELECT * FROM sales";
       $result = $conn->query($sql);
 
       if ($result == TRUE) {
-        // $record = mysqli_fetch_array($result['Total Sales']);
         $record = mysqli_fetch_array($result);
-        // echo '<script>alert("SELECT Statement is Correct and Sent")</script>'; //$result->fetch_assoc()
-        echo '<script>alert("'. $record['Total Sales'] .'")</script>';
-        echo $record['Total Sales'];
+        echo '<script>alert("Total Sales: $'. $record['Total Sales'] .'")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
-      
       $conn->close();
     }
 
@@ -180,18 +165,17 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
         die('<script>alert("Connection Failed: '.$message.'")</script>');
       }
-      // <!-- echo "Connected successfully"; -->
 
       //Query
-      $sql = "SELECT SUM(SoldUnits * Price) *.20 FROM sales";
+      $sql = "SELECT SUM(SoldUnits * Price) *.20 as 'Tax' FROM sales";
       $result = $conn->query($sql);
 
-      if ($result === TRUE) {
-        echo '<script>alert("'.$result.'")</script>';
+      if ($result == TRUE) {
+        $record = mysqli_fetch_array($result);
+        echo '<script>alert("Tax: $'. $record['Tax'] .'")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
@@ -211,18 +195,17 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
         die('<script>alert("Connection Failed: '.$message.'")</script>');
       }
-      // <!-- echo "Connected successfully"; -->
 
       //Query
-      $sql = "SELECT SUM(SoldUnits) FROM sales";
+      $sql = "SELECT SUM(SoldUnits) as 'Units' FROM sales";
       $result = $conn->query($sql);
 
-      if ($result === TRUE) {
-        echo '<script>alert("'.$result.'")</script>';
+      if ($result == TRUE) {
+        $record = mysqli_fetch_array($result);
+        echo '<script>alert("Total Units Sold: '. $record['Units'] .'")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
@@ -242,18 +225,17 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
         die('<script>alert("Connection Failed: '.$message.'")</script>');
       }
-      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
       $result = $conn->query($sql);
 
-      if ($result === TRUE) {
-        echo '<script>alert("'.$result.'")</script>';
+      if ($result == TRUE) {
+        $record = mysqli_fetch_array($result);
+        echo '<script>alert('.$record['Title'].' was the best selling product with '. $record['SoldUnits'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
@@ -273,18 +255,17 @@ https://templatemo.com/tm-589-lugx-gaming
 
       // Check connection
       if ($conn->connect_error) {
-        // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
         die('<script>alert("Connection Failed: '.$message.'")</script>');
       }
-      // <!-- echo "Connected successfully"; -->
 
       //Query
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
       $result = $conn->query($sql);
       
       if ($result === TRUE) {
-        echo '<script>alert("'.$result.'")</script>';
+        $record = mysqli_fetch_array($result);
+        echo '<script>alert('.$record['Title'].' was the worst selling product with '. $record['SoldUnits'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
@@ -313,7 +294,6 @@ https://templatemo.com/tm-589-lugx-gaming
       
       // Check connection
       if ($conn->connect_error) {
-      // <!-- die("Connection failed: " . $conn->connect_error); -->
         $message = $conn->connect_error;
         die('<script>alert("Connection Failed: '.$message.'")</script>');
       }
