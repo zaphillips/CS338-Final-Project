@@ -153,8 +153,8 @@ https://templatemo.com/tm-589-lugx-gaming
       $sql = "SELECT SUM(SoldUnits * Price) FROM sales";
       $result = $conn->query($sql);
 
-      if ($conn->query($sql) === TRUE) {
-        echo "<script>alert($result)</script>";
+      if ($result === TRUE) {
+        echo '<script>alert($result)</script>'; //$result->fetch_assoc()
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: " . $message)</script>';
@@ -184,8 +184,8 @@ https://templatemo.com/tm-589-lugx-gaming
       $sql = "SELECT SUM(SoldUnits * Price) *.20 FROM sales";
       $result = $conn->query($sql);
 
-      if ($conn->query($sql) === TRUE) {
-        echo "<script>alert($result)</script>";
+      if ($result === TRUE) {
+        echo '<script>alert($result)</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: " . $message)</script>';
@@ -215,8 +215,8 @@ https://templatemo.com/tm-589-lugx-gaming
       $sql = "SELECT SUM(SoldUnits) FROM sales";
       $result = $conn->query($sql);
 
-      if ($conn->query($sql) === TRUE) {
-        echo "<script>alert($result)</script>";
+      if ($result === TRUE) {
+        echo '<script>alert($result)</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: " . $message)</script>';
@@ -246,8 +246,8 @@ https://templatemo.com/tm-589-lugx-gaming
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
       $result = $conn->query($sql);
 
-      if ($conn->query($sql) === TRUE) {
-        echo "<script>alert($result)</script>";
+      if ($result === TRUE) {
+        echo '<script>alert($result)</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: " . $message)</script>';
@@ -277,8 +277,8 @@ https://templatemo.com/tm-589-lugx-gaming
       $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
       $result = $conn->query($sql);
 
-      if ($conn->query($sql) === TRUE) {
-        echo "<script>alert($result)</script>";
+      if ($result === TRUE) {
+        echo '<script>alert($result)</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: " . $message)</script>';
