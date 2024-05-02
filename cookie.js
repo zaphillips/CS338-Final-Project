@@ -50,6 +50,7 @@ function checkCookie(cname) {
     if (user == "") {
       document.getElementById("nav-login").style.display = "block";
       document.getElementById("nav-account").style.display = "none";
+      return false;
     } else if (user == "admin"){
       document.getElementById("nav-login").style.display = "none";
       document.getElementById("nav-account").style.display = "block";
@@ -76,6 +77,6 @@ function checkCookie(cname) {
   }
 }
 
-function deleteCookie() {
-  setCookie("Username", getCookie("Username"), 0);
+function deleteCookie(uname) {
+  setCookie(uname, getCookie(uname), 0);
 }

@@ -32,7 +32,7 @@ https://templatemo.com/tm-589-lugx-gaming
 
   </head>
 
-<body onload="checkCookie()">
+<body onload="checkCookie('Username')">
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -71,7 +71,7 @@ https://templatemo.com/tm-589-lugx-gaming
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li><a id="greeting-dropdown" class="dropdown-item"></a></li>
                           <li id="admin-dropdown"><a class="dropdown-item active" href="#top"><u>Dashboard</u></a></li>
-                          <li id="logout-dropdown"><a class="dropdown-item" href="index.php" onclick="deleteCookie()">Log Out</a></li>
+                          <li id="logout-dropdown"><a class="dropdown-item" href="index.php" onclick="deleteCookie('Username')">Log Out</a></li>
                         </ul>
                       </li>
                     </ul>   
