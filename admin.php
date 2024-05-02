@@ -153,12 +153,12 @@ https://templatemo.com/tm-589-lugx-gaming
       $sql = "SELECT SUM(SoldUnits * Price) FROM sales";
       $result = $conn->query($sql);
 
-      if ($result === TRUE) {
+      // if ($result === TRUE) {
         echo '<script>alert("'.$result.'")</script>'; //$result->fetch_assoc()
-        } else {
-          $message = $conn->error;
-          echo '<script>alert("Error Sending Query: '.$message.'")</script>';
-      }
+      //   } else {
+      //     $message = $conn->error;
+      //     echo '<script>alert("Error Sending Query: '.$message.'")</script>';
+      // }
       
       $conn->close();
     }
