@@ -18,17 +18,22 @@ loginButton.addEventListener("click", (e) => {
     }
 
     setCookie("Username", username, 265);
+    let cart = "Cart:" + getCookie("Username");
+    if(!checkCookie(cart)){
+      setCookie(cart, "0|0|0|0|0|0", 265);
+    }
+
     window.location.href = "index.php";
 })
 
-function setCookie(cname, cvalue, exdays) {
+export function setCookie(cname, cvalue, exdays) {
   const d = new Date();
   d.setTime(d.getTime() + (exdays*24*60*60*1000));
   let expires = "expires="+ d.toUTCString();
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-function getCookie(cname) {
+export function getCookie(cname) {
   let name = cname + "=";
   let decodedCookie = decodeURIComponent(document.cookie);
   let ca = decodedCookie.split(';');
@@ -44,7 +49,7 @@ function getCookie(cname) {
   return "";
 }
 
-function checkCookie(cname) {
+export function checkCookie(cname) {
   if(cname == "Username"){
     let user = getCookie("Username");
     if (user == "") {
@@ -65,10 +70,9 @@ function checkCookie(cname) {
       document.getElementById("greeting-dropdown").innerHTML="Welcome, " + user + "!";
     }
     return true;
-  }
+  } else{
+    let cart = "Cart:" + getCookie("Username");
 
-  if(cname == "Cart"){
-    let cart = getCookie("Cart");
     if (cart == ""){
       return false;
     }else{
@@ -77,6 +81,11 @@ function checkCookie(cname) {
   }
 }
 
-function deleteCookie(uname) {
-  setCookie(uname, getCookie(uname), 0);
+export function deleteCookie(cname) {
+  if (cname == "Username"){
+    setCookie(cname, getCookie(cname), 0);
+  } else{
+    let cart = "Cart:" + getCookie("Username");
+    setCookie(cart, getCookie(cart), 0);
+  }
 }

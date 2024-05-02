@@ -432,7 +432,7 @@ https://templatemo.com/tm-589-lugx-gaming
           <script>
             const time = new Date(); //Returns Current Time Back to Footer of Given Page
             document.write(time);
-          </script>
+          </>
       </div>
     </div>
   </footer>

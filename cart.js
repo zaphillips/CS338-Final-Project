@@ -1,34 +1,89 @@
+import{
+    setCookie,
+    checkCookie,
+    getCookie,
+    deleteCookie
+} from './cookie.js';
+
 var quantities = [0, 0, 0, 0, 0, 0];
 const prices = [0, 10, 60, 19, 60, 70];
+var cartCookie;
+var cartCookieName;
+
+if(checkCookie("Cart:" + getCookie("Username"))){
+    quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
+}
+
+function purchase(){
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 0);
+}
 
 function baldursGate(){
+    if(!checkCookie("Username")){
+        alert("Login to Add Items to The Cart");
+    }
     quantities[0] = quantities[0] + parseInt(document.forms["baldurs-amount-form"]["baldurs-amount"].value, 10);
-    alert("Successfully Added to the Cart")
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 265);
+    alert("Successfully Added to the Cart");
 }
 
 function forza(){
+    if(!checkCookie("Username")){
+        alert("Login to Add Items to The Cart");
+    }
     quantities[1] = quantities[1] + parseInt(document.forms["forza-amount-form"]["forza-amount"].value, 10);
-    alert("Successfully Added to the Cart")
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 265);
+    alert("Successfully Added to the Cart");
 }
 
 function mario(){
+    if(!checkCookie("Username")){
+        alert("Login to Add Items to The Cart");
+    }
     quantities[2] = quantities[2] + parseInt(document.forms["mario-amount-form"]["mario-amount"].value, 10);
-    alert("Successfully Added to the Cart")
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 265);
+    alert("Successfully Added to the Cart");
 }
 
 function minecraft(){
+    if(!checkCookie("Username")){
+        alert("Login to Add Items to The Cart");
+    }
     quantities[3] = quantities[3] + parseInt(document.forms["minecraft-amount-form"]["minecraft-amount"].value, 10);
-    alert("Successfully Added to the Cart")
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 265);
+    alert("Successfully Added to the Cart");
 }
 
 function ssbu(){
+    if(!checkCookie("Username")){
+        alert("Login to Add Items to The Cart");
+    }
     quantities[4] = quantities[4] + parseInt(document.forms["ssbu-amount-form"]["ssbu-amount"].value, 10);
-    alert("Successfully Added to the Cart")
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 265);
+    alert("Successfully Added to the Cart");
 }
 
 function totk(){
+    if(!checkCookie("Username")){
+        alert("Login to Add Items to The Cart");
+    }
     quantities[5] = quantities[5] + parseInt(document.forms["totk-amount-form"]["totk-amount"].value, 10);
-    alert("Successfully Added to the Cart")
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 265);
+    alert("Successfully Added to the Cart");
 }
 
 function updateSubtotals(){
@@ -38,6 +93,10 @@ function updateSubtotals(){
     quantities[3] = parseInt(document.forms["minecraft-form"]["minecraft-qty"].value, 10);  
     quantities[4] = parseInt(document.forms["ssbu-form"]["ssbu-qty"].value, 10);
     quantities[5] = parseInt(document.forms["zelda-form"]["zelda-qty"].value, 10);
+
+    cartCookie = quantities.join('|');
+    cartCookieName = "Cart:" + getCookie("Username");
+    setCookie(cartCookieName, cartCookie, 265);
 
     if((quantities.reduce((partialSum, a) => partialSum + a, 0)) == 0 ){
         document.getElementById("cart-grid").style.display = "none";
