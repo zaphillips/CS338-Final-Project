@@ -204,7 +204,7 @@ https://templatemo.com/tm-589-lugx-gaming
 
       if ($result == TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert("Total Units Sold: '. $record['Units'] .'")</script>';
+        echo '<script>alert("Total Number of Products Sold: '. $record['Units'] .'")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
@@ -234,7 +234,7 @@ https://templatemo.com/tm-589-lugx-gaming
 
       if ($result == TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert('.$record['Title'].' was the best selling product with '. $record['SoldUnits'] .' units sold.")</script>';
+        echo '<script>alert("'.$record['Title'].' was the best selling product with '. $record['SoldUnits'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
@@ -264,7 +264,7 @@ https://templatemo.com/tm-589-lugx-gaming
       
       if ($result === TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert('.$record['Title'].' was the worst selling product with '. $record['SoldUnits'] .' units sold.")</script>';
+        echo '<script>alert("'.$record['Title'].' was the worst selling product with '. $record['SoldUnits'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
