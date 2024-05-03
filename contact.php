@@ -120,7 +120,7 @@ https://templatemo.com/tm-589-lugx-gaming
                 </div>
               </div>
               <div class="col-lg-12">
-                <form id="contact-form" action="new_client_message.php" method="post">
+                <form id="contact-form" method="post">
                   <div class="row">
                     <div class="col-lg-6">
                       <fieldset>
