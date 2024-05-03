@@ -204,8 +204,9 @@ if ($fname != ""){
 // $_POST = array();
 $conn->close();
 ?>
+<!-- Refreshes the Page to Eliminate Data Duplication on Server -->
 <script>
-  window.location.href = "#";
+  location.reload();
 </script>
 
   <footer>
