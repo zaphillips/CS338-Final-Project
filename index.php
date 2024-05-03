@@ -77,7 +77,8 @@ https://templatemo.com/tm-589-lugx-gaming
                       <li><a href="index.php" class="active">Home</a></li>
                       <li><a href="shop.html">Shop</a></li>
                       <!-- <li><a href="product-details.html">Product Details</a></li> -->
-                      <li><a href="contact.html">Contact</a></li>
+                      <!-- <li><a href="contact.html">Contact</a></li> -->
+                      <li><a href="contact.php">Contact</a></li><li><a href="contact.html">Contact</a></li>
                       <li><a href="cart.html">Cart <i class="fa fa-shopping-bag"></i></a></li>
                       <li class="li-button" id ="nav-login"><a href="sign-in.html">Sign In</a></li>
                       <li class="nav-item dropdown" id ="nav-account">
