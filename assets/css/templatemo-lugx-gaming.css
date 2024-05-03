@@ -1782,6 +1782,41 @@ Login Page Style
 
 /* 
 ---------------------------------------------
+Admin Page Style
+--------------------------------------------- 
+*/
+
+.admin-page .container{
+  margin-bottom: 40px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 30%;
+  background-color: #f7f7f7;
+  border-radius: 25px;
+  padding: 60px;
+}
+
+#buttons button{
+  display: flex;
+  height: 50px;
+  line-height: 50px;
+  background-color: #2a5a4d;
+  color: #fff;
+  font-size: 15px;
+  text-transform: uppercase;
+  font-weight: 500;
+  padding: 0px 25px;
+  border: none;
+  transition: all .3s;
+  border-radius: 100px;
+}
+
+#buttons button:hover {
+  background-color: #306959;
+}
+
+/* 
+---------------------------------------------
 Cart Page Style
 --------------------------------------------- 
 */
