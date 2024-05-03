@@ -204,6 +204,9 @@ if ($fname != ""){
 // $_POST = array();
 $conn->close();
 ?>
+<script>
+  window.location.href = "#";
+</script>
 
   <footer>
     <div class="container">
