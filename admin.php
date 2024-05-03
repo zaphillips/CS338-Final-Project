@@ -229,12 +229,12 @@ https://templatemo.com/tm-589-lugx-gaming
       }
 
       //Query
-      $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
+      $sql = "SELECT Title as 'Title', SoldUnits as 'Sold Units' FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
       $result = $conn->query($sql);
 
       if ($result == TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert("'.$record['Title'].' was the best selling product with '. $record['SoldUnits'] .' units sold.")</script>';
+        echo '<script>alert("'.$record['Title'].' was the best selling product with '. $record['Sold Units'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
@@ -259,12 +259,12 @@ https://templatemo.com/tm-589-lugx-gaming
       }
 
       //Query
-      $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
+      $sql = "SELECT Title as 'Title', SoldUnits as 'Sold Units' FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
       $result = $conn->query($sql);
       
       if ($result == TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert("'.$record['Title'].' was the worst selling product with '. $record['SoldUnits'] .' units sold.")</script>';
+        echo '<script>alert("'.$record['Title'].' was the worst selling product with '. $record['Sold Units'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
