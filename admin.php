@@ -145,7 +145,6 @@ https://templatemo.com/tm-589-lugx-gaming
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
       //Close Connection
-      $_POST = array();
       $conn->close();
     }
 
@@ -176,7 +175,6 @@ https://templatemo.com/tm-589-lugx-gaming
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
       //Close Connection
-      $_POST = array();
       $conn->close();
     }
 
@@ -207,7 +205,6 @@ https://templatemo.com/tm-589-lugx-gaming
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
       //Close Connection
-      $_POST = array();
       $conn->close();
     }
 
@@ -268,7 +265,6 @@ https://templatemo.com/tm-589-lugx-gaming
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
       //Close Connection
-      $_POST = array();
       $conn->close();
     }
     
@@ -300,7 +296,6 @@ https://templatemo.com/tm-589-lugx-gaming
       }
 
       //Close Connection
-      $_POST = array();
       $conn->close();
     }
   ?>
