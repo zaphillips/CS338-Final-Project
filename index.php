@@ -55,6 +55,44 @@ https://templatemo.com/tm-589-lugx-gaming
       //Quantities is an array of strings that contains the amount of each game purchased by the customer.
       //Quantities is formatted as such: [Baldur's Gate, Forza, Mario, Minecraft, SSBU, TOTK]
       //(Formatted alphabetically - don't get mad that TOTK is last, Anthony.)
+      $servername = "apollo.anselm.edu";
+      $username = "team5";
+      $password = "team5pass";
+      $database = "DBteam5";
+
+      // Create connection
+      $conn = new mysqli($servername, $username, $password, $database);
+
+      // Check connection
+      if ($conn->connect_error) {
+        $message = $conn->connect_error;
+        die('<script>alert("Connection Failed: '.$message.'")</script>');
+      }
+
+      //Query
+      $sql0 = "UPDATE sales SET SoldUnits = SoldUnits + '$quantities[0]' WHERE GameID = 0";
+      $sql1 = "UPDATE sales SET SoldUnits = SoldUnits + '$quantities[1]' WHERE GameID = 1";
+      $sql2 = "UPDATE sales SET SoldUnits = SoldUnits + '$quantities[2]' WHERE GameID = 2";
+      $sql3 = "UPDATE sales SET SoldUnits = SoldUnits + '$quantities[3]' WHERE GameID = 3";
+      $sql4 = "UPDATE sales SET SoldUnits = SoldUnits + '$quantities[4]' WHERE GameID = 4";
+      $sql5 = "UPDATE sales SET SoldUnits = SoldUnits + '$quantities[5]' WHERE GameID = 5";
+
+      $result0 = $conn->query($sql0);
+      $result1 = $conn->query($sql1);
+      $result2 = $conn->query($sql2);
+      $result3 = $conn->query($sql3);
+      $result4 = $conn->query($sql4);
+      $result5 = $conn->query($sql5);
+
+      if ($result0 == TRUE && $result1 == TRUE && $result2 == TRUE && $result3 == TRUE && $result4 == TRUE && $result5 == TRUE) {
+        // $record = mysqli_fetch_array($result);
+        echo '<script>alert("Your order has been confirmed. Have a great rest of your day!")</script>';
+        } else {
+          $message = $conn->error;
+          echo '<script>alert("Error Sending Query: '.$message.'")</script>';
+      }
+      //Close Connection
+      $conn->close();
     }
 
     //Opens Vistor Log to and Returns How Many Times the Website has been Visited
