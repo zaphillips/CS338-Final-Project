@@ -96,7 +96,17 @@ function baldursGate(){
       }else{
         quantities = [0, 0, 0, 0, 0, 0];
       }
-      quantities[0] = quantities[0] + parseInt(document.forms["baldurs-amount-form"]["baldurs-amount"].value, 10);
+      
+      if((parseInt(document.forms["baldurs-amount-form"]["baldurs-amount"].value, 10)) <= 0){
+        alert("Please enter a valid amount.");
+        return;
+      }
+      else if(isNaN(parseInt(document.forms["baldurs-amount-form"]["baldurs-amount"].value, 10))){
+        quantities[0] = quantities[0] + 1;
+      }else{
+        quantities[0] = quantities[0] + parseInt(document.forms["baldurs-amount-form"]["baldurs-amount"].value, 10);
+      }
+
       cartCookie = quantities.join('|');
       cartCookieName = "Cart:" + getCookie("Username");
       setCookie(cartCookieName, cartCookie, 265);
@@ -113,7 +123,17 @@ function forza(){
       }else{
         quantities = [0, 0, 0, 0, 0, 0];
       }
-      quantities[1] = quantities[1] + parseInt(document.forms["forza-amount-form"]["forza-amount"].value, 10);
+      
+      if((parseInt(document.forms["forza-amount-form"]["forza-amount"].value, 10)) <= 0){
+        alert("Please enter a valid amount.");
+        return;
+      }
+      else if(isNaN(parseInt(document.forms["forza-amount-form"]["forza-amount"].value, 10))){
+        quantities[1] = quantities[1] + 1;
+      }else{
+        quantities[1] = quantities[1] + parseInt(document.forms["forza-amount-form"]["forza-amount"].value, 10);
+      }
+
       cartCookie = quantities.join('|');
       cartCookieName = "Cart:" + getCookie("Username");
       setCookie(cartCookieName, cartCookie, 265);
@@ -130,7 +150,17 @@ function mario(){
       }else{
         quantities = [0, 0, 0, 0, 0, 0];
       }
-      quantities[2] = quantities[2] + parseInt(document.forms["mario-amount-form"]["mario-amount"].value, 10);
+      
+      if((parseInt(document.forms["mario-amount-form"]["mario-amount"].value, 10)) <= 0){
+        alert("Please enter a valid amount.");
+        return;
+      }
+      else if(isNaN(parseInt(document.forms["mario-amount-form"]["mario-amount"].value, 10))){
+        quantities[2] = quantities[2] + 1;
+      }else{
+        quantities[2] = quantities[2] + parseInt(document.forms["mario-amount-form"]["mario-amount"].value, 10);
+      }
+
       cartCookie = quantities.join('|');
       cartCookieName = "Cart:" + getCookie("Username");
       setCookie(cartCookieName, cartCookie, 265);
@@ -147,7 +177,17 @@ function minecraft(){
       }else{
         quantities = [0, 0, 0, 0, 0, 0];
       }
-      quantities[3] = quantities[3] + parseInt(document.forms["minecraft-amount-form"]["minecraft-amount"].value, 10);
+      
+      if((parseInt(document.forms["minecraft-amount-form"]["minecraft-amount"].value, 10)) <= 0){
+        alert("Please enter a valid amount.");
+        return;
+      }
+      else if(isNaN(parseInt(document.forms["minecraft-amount-form"]["minecraft-amount"].value, 10))){
+        quantities[3] = quantities[3] + 1;
+      }else{
+        quantities[3] = quantities[3] + parseInt(document.forms["minecraft-amount-form"]["minecraft-amount"].value, 10);
+      }
+
       cartCookie = quantities.join('|');
       cartCookieName = "Cart:" + getCookie("Username");
       setCookie(cartCookieName, cartCookie, 265);
@@ -165,7 +205,16 @@ function ssbu(){
         quantities = [0, 0, 0, 0, 0, 0];
       }
 
-      quantities[4] = quantities[4] + parseInt(document.forms["ssbu-amount-form"]["ssbu-amount"].value, 10);
+      if((parseInt(document.forms["ssbu-amount-form"]["ssbu-amount"].value, 10)) <= 0){
+        alert("Please enter a valid amount.");
+        return;
+      }
+      else if(isNaN(parseInt(document.forms["ssbu-amount-form"]["ssbu-amount"].value, 10))){
+        quantities[4] = quantities[4] + 1;
+      }else{
+        quantities[4] = quantities[4] + parseInt(document.forms["ssbu-amount-form"]["ssbu-amount"].value, 10);
+      }
+
       cartCookie = quantities.join('|');
       cartCookieName = "Cart:" + getCookie("Username");
       setCookie(cartCookieName, cartCookie, 265);
@@ -183,11 +232,21 @@ function totk(){
         quantities = [0, 0, 0, 0, 0, 0];
       }
 
-      quantities[5] = quantities[5] + parseInt(document.forms["totk-amount-form"]["totk-amount"].value, 10);
+      if((parseInt(document.forms["totk-amount-form"]["totk-amount"].value, 10)) <= 0){
+        alert("Please enter a valid amount.");
+        return;
+      }
+      else if(isNaN(parseInt(document.forms["totk-amount-form"]["totk-amount"].value, 10))){
+        quantities[5] = quantities[5] + 1;
+      }else{
+        quantities[5] = quantities[5] + parseInt(document.forms["totk-amount-form"]["totk-amount"].value, 10);
+      }
+
       cartCookie = quantities.join('|');
       cartCookieName = "Cart:" + getCookie("Username");
       setCookie(cartCookieName, cartCookie, 265);
       alert("Successfully Added to the Cart");
+
     }
 }
 
