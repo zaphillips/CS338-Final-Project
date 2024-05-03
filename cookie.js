@@ -74,12 +74,15 @@ function deleteCookie() {
 }
 
 //Cart Cookie Functions and Variables
-const prices = [0, 10, 60, 19, 60, 70];
 var cartCookie;
 var cartCookieName;
+var quantities;
+var total;
 
 function purchase(){
-    cartCookie = quantities.join('|');
+    //cartCookie = quantities.join('|');
+    alert("Thank you for your purchase!");
+    window.location.href = "index.php";
     cartCookieName = "Cart:" + getCookie("Username");
     setCookie(cartCookieName, getCookie(cartCookieName), 0);
 }
@@ -91,7 +94,7 @@ function baldursGate(){
       if(getCookie("Cart:" + getCookie("Username")) != ""){
         quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
       }else{
-        var quantities = [0, 0, 0, 0, 0, 0];
+        quantities = [0, 0, 0, 0, 0, 0];
       }
       quantities[0] = quantities[0] + parseInt(document.forms["baldurs-amount-form"]["baldurs-amount"].value, 10);
       cartCookie = quantities.join('|');
@@ -108,7 +111,7 @@ function forza(){
       if(getCookie("Cart:" + getCookie("Username")) != ""){
         quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
       }else{
-        var quantities = [0, 0, 0, 0, 0, 0];
+        quantities = [0, 0, 0, 0, 0, 0];
       }
       quantities[1] = quantities[1] + parseInt(document.forms["forza-amount-form"]["forza-amount"].value, 10);
       cartCookie = quantities.join('|');
@@ -125,7 +128,7 @@ function mario(){
       if(getCookie("Cart:" + getCookie("Username")) != ""){
         quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
       }else{
-        var quantities = [0, 0, 0, 0, 0, 0];
+        quantities = [0, 0, 0, 0, 0, 0];
       }
       quantities[2] = quantities[2] + parseInt(document.forms["mario-amount-form"]["mario-amount"].value, 10);
       cartCookie = quantities.join('|');
@@ -142,7 +145,7 @@ function minecraft(){
       if(getCookie("Cart:" + getCookie("Username")) != ""){
         quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
       }else{
-        var quantities = [0, 0, 0, 0, 0, 0];
+        quantities = [0, 0, 0, 0, 0, 0];
       }
       quantities[3] = quantities[3] + parseInt(document.forms["minecraft-amount-form"]["minecraft-amount"].value, 10);
       cartCookie = quantities.join('|');
@@ -159,7 +162,7 @@ function ssbu(){
       if(getCookie("Cart:" + getCookie("Username")) != ""){
         quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
       }else{
-        var quantities = [0, 0, 0, 0, 0, 0];
+        quantities = [0, 0, 0, 0, 0, 0];
       }
 
       quantities[4] = quantities[4] + parseInt(document.forms["ssbu-amount-form"]["ssbu-amount"].value, 10);
@@ -177,7 +180,7 @@ function totk(){
       if(getCookie("Cart:" + getCookie("Username")) != ""){
         quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
       }else{
-        var quantities = [0, 0, 0, 0, 0, 0];
+        quantities = [0, 0, 0, 0, 0, 0];
       }
 
       quantities[5] = quantities[5] + parseInt(document.forms["totk-amount-form"]["totk-amount"].value, 10);
@@ -192,7 +195,7 @@ function updateSubtotals(){
   if(getCookie("Cart:" + getCookie("Username")) != ""){
     quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
   }else{
-    var quantities = [0, 0, 0, 0, 0, 0];
+    quantities = [0, 0, 0, 0, 0, 0];
   }
 
     quantities[0] = parseInt(document.forms["baldurs-form"]["baldurs-qty"].value, 10);
@@ -219,37 +222,59 @@ function updateSubtotals(){
         if(quantities[5] == 0) {document.getElementById("totk").style.display = "none";}
     }
 
-    document.getElementById("baldurs-subtotal").innerHTML="$" + (quantities[0] * prices[0]);
-    document.getElementById("forza-subtotal").innerHTML="$" + (quantities[1] * prices[1]);
-    document.getElementById("mario-subtotal").innerHTML="$" + (quantities[2] * prices[2]);
-    document.getElementById("minecraft-subtotal").innerHTML="$" + (quantities[3] * prices[3]);
-    document.getElementById("ssbu-subtotal").innerHTML="$" + (quantities[4] * prices[4]);
-    document.getElementById("zelda-subtotal").innerHTML="$" + (quantities[5] * prices[5]);
+    document.getElementById("baldurs-subtotal").innerHTML="$" + (quantities[0] * 0);
+    document.getElementById("forza-subtotal").innerHTML="$" + (quantities[1] * 10);
+    document.getElementById("mario-subtotal").innerHTML="$" + (quantities[2] * 60);
+    document.getElementById("minecraft-subtotal").innerHTML="$" + (quantities[3] * 19);
+    document.getElementById("ssbu-subtotal").innerHTML="$" + (quantities[4] * 60);
+    document.getElementById("zelda-subtotal").innerHTML="$" + (quantities[5] * 70);
+    
+    total = [quantities[0] * 0, quantities[1] * 10, quantities[2] * 60, quantities[3] * 19, quantities[4] * 60, quantities[5] * 70];
+    document.getElementById("total_purchase").innerHTML="Total: $" + (total.reduce((partialSum, a) => partialSum + a, 0));
 }
 
 function setQuantities(){
   if(getCookie("Cart:" + getCookie("Username")) != ""){
     quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
   }else{
-    var quantities = [0, 0, 0, 0, 0, 0];
+    quantities = [0, 0, 0, 0, 0, 0];
   }
 
   if((quantities.reduce((partialSum, a) => partialSum + a, 0)) == 0 ){
       document.getElementById("cart-grid").style.display = "none";
       document.getElementById("empty-message").style.display = "block";
+  }else{
+    document.getElementById("cart-grid").style.display = "grid";
+    document.getElementById("empty-message").style.display = "none";
+    if(quantities[0] == 0) {document.getElementById("baldurs").style.display = "none";}
+        if(quantities[1] == 0) {document.getElementById("forza").style.display = "none";}
+        if(quantities[2] == 0) {document.getElementById("mario").style.display = "none";}
+        if(quantities[3] == 0) {document.getElementById("minecraft").style.display = "none";}
+        if(quantities[4] == 0) {document.getElementById("ssbu").style.display = "none";}
+        if(quantities[5] == 0) {document.getElementById("totk").style.display = "none";}
   }
 
-    document.forms["baldurs-form"]["baldurs-qty"].value = toString(quantities[0]);
-    document.forms["forza-form"]["forza-qty"].value = toString(quantities[1]);
-    document.forms["mario-form"]["mario-qty"].value = toString(quantities[2]);
-    document.forms["minecraft-form"]["minecraft-qty"].value = toString(quantities[3]);    
-    document.forms["ssbu-form"]["ssbu-qty"].value = toString(quantities[4]);
-    document.forms["zelda-form"]["zelda-qty"].value = toString(quantities[5]);
+    document.forms["baldurs-form"]["baldurs-qty"].placeholder = quantities[0];
+    document.forms["forza-form"]["forza-qty"].placeholder = quantities[1];
+    document.forms["mario-form"]["mario-qty"].placeholder = quantities[2];
+    document.forms["minecraft-form"]["minecraft-qty"].placeholder = quantities[3];    
+    document.forms["ssbu-form"]["ssbu-qty"].placeholder = quantities[4];
+    document.forms["zelda-form"]["zelda-qty"].placeholder = quantities[5];
 
-    document.getElementById("baldurs-subtotal").innerHTML="$" + (quantities[0] * prices[0]);
-    document.getElementById("forza-subtotal").innerHTML="$" + (quantities[1] * prices[1]);
-    document.getElementById("mario-subtotal").innerHTML="$" + (quantities[2] * prices[2]);
-    document.getElementById("minecraft-subtotal").innerHTML="$" + (quantities[3] * prices[3]);
-    document.getElementById("ssbu-subtotal").innerHTML="$" + (quantities[4] * prices[4]);
-    document.getElementById("zelda-subtotal").innerHTML="$" + (quantities[5] * prices[5]);
+    document.forms["baldurs-form"]["baldurs-qty"].value = quantities[0];
+    document.forms["forza-form"]["forza-qty"].value = quantities[1];
+    document.forms["mario-form"]["mario-qty"].value = quantities[2];
+    document.forms["minecraft-form"]["minecraft-qty"].value = quantities[3];    
+    document.forms["ssbu-form"]["ssbu-qty"].value = quantities[4];
+    document.forms["zelda-form"]["zelda-qty"].value = quantities[5];
+
+    document.getElementById("baldurs-subtotal").innerHTML="$" + (quantities[0] * 0);
+    document.getElementById("forza-subtotal").innerHTML="$" + (quantities[1] * 10);
+    document.getElementById("mario-subtotal").innerHTML="$" + (quantities[2] * 60);
+    document.getElementById("minecraft-subtotal").innerHTML="$" + (quantities[3] * 19);
+    document.getElementById("ssbu-subtotal").innerHTML="$" + (quantities[4] * 60);
+    document.getElementById("zelda-subtotal").innerHTML="$" + (quantities[5] * 70);
+
+    total = [quantities[0] * 0, quantities[1] * 10, quantities[2] * 60, quantities[3] * 19, quantities[4] * 60, quantities[5] * 70];
+    document.getElementById("total_purchase").innerHTML="Total: $" + (total.reduce((partialSum, a) => partialSum + a, 0));
 }
