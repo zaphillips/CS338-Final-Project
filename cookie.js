@@ -173,7 +173,6 @@ function ssbu(){
 function totk(){
     if(getCookie("Username") == ""){
         alert("Login to Add Items to The Cart");
-        window.location.href = "sign-in.html";
     }else{
       if(getCookie("Cart:" + getCookie("Username")) != ""){
         quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
