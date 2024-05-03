@@ -81,7 +81,7 @@ var cartCookieName;
 function purchase(){
     cartCookie = quantities.join('|');
     cartCookieName = "Cart:" + getCookie("Username");
-    setCookie(cartCookieName, cartCookie, 0);
+    setCookie(cartCookieName, getCookie(cartCookieName), 0);
 }
 
 function baldursGate(){
