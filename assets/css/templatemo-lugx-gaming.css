@@ -1754,7 +1754,6 @@ Login Page Style
 }
 
 .login-page form button {
-  display: inline-block;
   height: 50px;
   line-height: 50px;
   background-color: #2a5a4d;
