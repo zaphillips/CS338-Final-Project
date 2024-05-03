@@ -191,7 +191,7 @@ if ($conn->query($sql) == TRUE) {
 } else {
     echo '<script>alert("Error adding record: '. $conn->error.'")</script>';
 }
-
+$_POST = array();
 $conn->close();
 ?>
 
