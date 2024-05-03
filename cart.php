@@ -98,6 +98,17 @@ https://templatemo.com/tm-589-lugx-gaming
     </div>
   </div>
 
+  <?php
+    if(array_key_exists('purchase', $_POST)) { 
+      purchase();
+    } 
+
+    function purchase() {
+        echo '<script>purchase();</script>';
+        echo '<script>window.location.href = "index.php"</script>';
+    }
+  ?>
+
   <div class="cart-page section">
     <div class="header">
       <h1>Cart</h1>
@@ -191,31 +202,13 @@ https://templatemo.com/tm-589-lugx-gaming
       </div>
       <hr>
       <div id="purchase-section">
-        <form action="cart.php" method="post">
-          <input type="submit" class = "button" name="purchase">Complete Purchase</input>
+        <form method="post">
+          <input id="purchaseButton" type="submit" class = "button" name="purchase" value="complete purchase"/>
         </form>
         <h6 id="total_purchase">Total: $0</h6>
       </div>
     </div>
   </div>
-
-  <?php
-    if (isset($_POST['action'])) {
-        switch ($_POST['action']) {
-            case 'purchase':
-                purchase();
-                break;
-        }
-    }
-
-    function purchase() {
-        echo '<script>purchase();';
-        $Cart = $_COOKIE["Cart"];
-        echo '<script>setCookie("Cart", "getCookie("Cart")", 0)';
-        echo '<script>alert("Cart: '.$Cart.'")</script>';
-        exit;
-    }
-?>
     
   <footer>
     <div class="container">

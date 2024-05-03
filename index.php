@@ -30,7 +30,7 @@ https://templatemo.com/tm-589-lugx-gaming
 -->
   </head>
 
-<body onload="checkCookie()">
+<body id = "body" onload="checkCookie()">
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -45,8 +45,18 @@ https://templatemo.com/tm-589-lugx-gaming
   </div>
   <!-- ***** Preloader End ***** -->
 
-  <!-- Visitor Hit Counter -->
+  <!-- Visitor Hit Counter & Cart Data to Database-->
   <?php
+    if(isset($_COOKIE['Cart'])){
+      $Cart = $_COOKIE['Cart'];
+      echo '<script>deleteCart();</script>';
+      
+      $quantities = explode("|", $Cart);
+      //Quantities is an array of strings that contains the amount of each game purchased by the customer.
+      //Quantities is formatted as such: [Baldur's Gate, Forza, Mario, Minecraft, SSBU, TOTK]
+      //(Formatted alphabetically - don't get mad that TOTK is last, Anthony.)
+    }
+
     //Opens Vistor Log to and Returns How Many Times the Website has been Visited
     $log = fopen("visitorLog.txt", "r");
     $count = fread($log, 1024);

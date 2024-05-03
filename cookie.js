@@ -80,12 +80,15 @@ var quantities;
 var total;
 
 function purchase(){
-    //cartCookie = quantities.join('|');
     alert("Thank you for your purchase!");
-    window.location.href = "index.php";
     cartCookieName = "Cart:" + getCookie("Username");
     setCookie("Cart", getCookie(cartCookieName), 265);
-    setCookie(cartCookieName, getCookie(cartCookieName), 0);
+}
+
+function deleteCart(){
+  cartCookieName = "Cart:" + getCookie("Username");
+  setCookie("Cart", getCookie("Cart"), 0);
+  setCookie(cartCookieName, getCookie(cartCookieName), 0);
 }
 
 function baldursGate(){
