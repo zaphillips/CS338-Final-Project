@@ -191,11 +191,31 @@ https://templatemo.com/tm-589-lugx-gaming
       </div>
       <hr>
       <div id="purchase-section">
-        <button onclick="purchase()">Complete Purchase</button>
+        <form action="cart.php" method="post">
+          <input type="submit" class = "button" name="purchase">Complete Purchase</input>
+        </form>
         <h6 id="total_purchase">Total: $0</h6>
       </div>
     </div>
   </div>
+
+  <?php
+    if (isset($_POST['action'])) {
+        switch ($_POST['action']) {
+            case 'purchase':
+                purchase();
+                break;
+        }
+    }
+
+    function purchase() {
+        echo '<script>purchase();';
+        $Cart = $_COOKIE["Cart"];
+        echo '<script>setCookie("Cart", "getCookie("Cart")", 0)';
+        echo '<script>alert("Cart: '.$Cart.'")</script>';
+        exit;
+    }
+?>
     
   <footer>
     <div class="container">

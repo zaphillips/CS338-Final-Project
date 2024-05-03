@@ -84,6 +84,7 @@ function purchase(){
     alert("Thank you for your purchase!");
     window.location.href = "index.php";
     cartCookieName = "Cart:" + getCookie("Username");
+    setCookie("Cart", getCookie(cartCookieName), 265);
     setCookie(cartCookieName, getCookie(cartCookieName), 0);
 }
 
