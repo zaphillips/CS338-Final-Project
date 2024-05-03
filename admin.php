@@ -104,7 +104,7 @@ https://templatemo.com/tm-589-lugx-gaming
             <h2>Admin Dashboard</h2>
           </div>
           <div class="d-flex justify-content-center">
-              <div class="col-lg-12 justify-content-center margin:20px">
+              <div class="col-lg-12 justify-content:center height:20px">
                 <fieldset>
                   <form method = "POST">
                     <button name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
