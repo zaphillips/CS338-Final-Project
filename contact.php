@@ -150,7 +150,7 @@ https://templatemo.com/tm-589-lugx-gaming
                     </div>
                     <div class="col-lg-12">
                       <fieldset>
-                        <button type="submit" id="form-submit" class="orange-button">Send Message Now</button>
+                        <button type="submit" id="form-submit" class="orange-button" onclick="location.href = 'index.php';">Send Message Now</button>
                       </fieldset>
                     </div>
                   </div>
@@ -193,7 +193,6 @@ if ($fname != ""){
       echo '<script>alert("Error adding record: '. $conn->error.'")</script>';
   }
   $_POST = array();
-  // echo '<script>location.reload();</script>'; //Refreshes the Page to Eliminate Data Duplication on Server
 }
 // $sql="INSERT INTO messages (fname, lname, email, subject, message) VALUES ('$fname','$lname', '$email', '$subject', '$message')";
 
@@ -205,9 +204,7 @@ if ($fname != ""){
 // $_POST = array();
 
 $conn->close();
-header("Location: index.php");
 ?>
-<script>  </script>
 
   <footer>
     <div class="container">
