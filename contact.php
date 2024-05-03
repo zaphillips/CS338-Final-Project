@@ -184,14 +184,24 @@ $email = $_POST['email'];
 $subject = $_POST['subject'];
 $message = $_POST['message'];
 
-$sql="INSERT INTO messages (fname, lname, email, subject, message) VALUES ('$fname','$lname', '$email', '$subject', '$message')";
+if ($fname != ""){
+  $sql="INSERT INTO messages (fname, lname, email, subject, message) VALUES ('$fname','$lname', '$email', '$subject', '$message')";
 
-if ($conn->query($sql) == TRUE) {
-    echo '<script>alert("Record added successfully")</script>';
-} else {
-    echo '<script>alert("Error adding record: '. $conn->error.'")</script>';
+  if ($conn->query($sql) == TRUE) {
+      echo '<script>alert("Record added successfully")</script>';
+  } else {
+      echo '<script>alert("Error adding record: '. $conn->error.'")</script>';
+  }
+  $_POST = array();
 }
-$_POST = array();
+// $sql="INSERT INTO messages (fname, lname, email, subject, message) VALUES ('$fname','$lname', '$email', '$subject', '$message')";
+
+// if ($conn->query($sql) == TRUE) {
+//     echo '<script>alert("Record added successfully")</script>';
+// } else {
+//     echo '<script>alert("Error adding record: '. $conn->error.'")</script>';
+// }
+// $_POST = array();
 $conn->close();
 ?>
 
