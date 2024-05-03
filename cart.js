@@ -1,16 +1,9 @@
-import{
-    setCookie,
-    checkCookie,
-    getCookie,
-    deleteCookie
-} from './cookie.js';
-
 var quantities = [0, 0, 0, 0, 0, 0];
 const prices = [0, 10, 60, 19, 60, 70];
 var cartCookie;
 var cartCookieName;
 
-if(checkCookie("Cart:" + getCookie("Username"))){
+if(getCookie("Cart:" + getCookie("Username")) == ""){
     quantities = getCookie("Cart:" + getCookie("Username")).split('|').map(Number);
 }
 
@@ -21,7 +14,7 @@ function purchase(){
 }
 
 function baldursGate(){
-    if(!checkCookie("Username")){
+    if(getCookie("Username") == ""){
         alert("Login to Add Items to The Cart");
     }
     quantities[0] = quantities[0] + parseInt(document.forms["baldurs-amount-form"]["baldurs-amount"].value, 10);
@@ -32,7 +25,7 @@ function baldursGate(){
 }
 
 function forza(){
-    if(!checkCookie("Username")){
+    if(getCookie("Username") == ""){
         alert("Login to Add Items to The Cart");
     }
     quantities[1] = quantities[1] + parseInt(document.forms["forza-amount-form"]["forza-amount"].value, 10);
@@ -43,7 +36,7 @@ function forza(){
 }
 
 function mario(){
-    if(!checkCookie("Username")){
+    if(getCookie("Username") == ""){
         alert("Login to Add Items to The Cart");
     }
     quantities[2] = quantities[2] + parseInt(document.forms["mario-amount-form"]["mario-amount"].value, 10);
@@ -54,7 +47,7 @@ function mario(){
 }
 
 function minecraft(){
-    if(!checkCookie("Username")){
+    if(getCookie("Username") == ""){
         alert("Login to Add Items to The Cart");
     }
     quantities[3] = quantities[3] + parseInt(document.forms["minecraft-amount-form"]["minecraft-amount"].value, 10);
@@ -65,7 +58,7 @@ function minecraft(){
 }
 
 function ssbu(){
-    if(!checkCookie("Username")){
+    if(getCookie("Username") == ""){
         alert("Login to Add Items to The Cart");
     }
     quantities[4] = quantities[4] + parseInt(document.forms["ssbu-amount-form"]["ssbu-amount"].value, 10);
@@ -76,7 +69,7 @@ function ssbu(){
 }
 
 function totk(){
-    if(!checkCookie("Username")){
+    if(getCookie("Username") == ""){
         alert("Login to Add Items to The Cart");
     }
     quantities[5] = quantities[5] + parseInt(document.forms["totk-amount-form"]["totk-amount"].value, 10);

@@ -30,7 +30,7 @@ https://templatemo.com/tm-589-lugx-gaming
 -->
   </head>
 
-<body onload="checkCookie('Username')">
+<body onload="checkCookie()">
 
   <!-- ***** Preloader Start ***** -->
   <div id="js-preloader" class="js-preloader">
@@ -78,14 +78,14 @@ https://templatemo.com/tm-589-lugx-gaming
                       <li><a href="shop.html">Shop</a></li>
                       <!-- <li><a href="product-details.html">Product Details</a></li> -->
                       <li><a href="contact.html">Contact</a></li>
-                      <li><a href="cart.html">Cart <i class="fa fa-shopping-bag"></i></a></li>                    </li>
+                      <li><a href="cart.html">Cart <i class="fa fa-shopping-bag"></i></a></li>
                       <li class="li-button" id ="nav-login"><a href="sign-in.html">Sign In</a></li>
                       <li class="nav-item dropdown" id ="nav-account">
                         <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Account</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
                           <li><a id="greeting-dropdown" class="dropdown-item"></a></li>
                           <li id="admin-dropdown"><a class="dropdown-item" href="admin.php">Dashboard</a></li>
-                          <li id="logout-dropdown"><a class="dropdown-item" href="index.php" onclick="deleteCookie('Username')">Log Out</a></li>
+                          <li id="logout-dropdown"><a class="dropdown-item" href="index.php" onclick="deleteCookie()">Log Out</a></li>
                         </ul>
                       </li>
                     </ul>   
@@ -432,14 +432,14 @@ https://templatemo.com/tm-589-lugx-gaming
           <script>
             const time = new Date(); //Returns Current Time Back to Footer of Given Page
             document.write(time);
-          </>
+          </script>
       </div>
     </div>
   </footer>
 
   <!-- Scripts -->
   <!-- Bootstrap core JavaScript -->
-  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/jquery/jquery.min.js"></cript>
   <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
   <script src="assets/js/isotope.min.js"></script>
   <script src="assets/js/owl-carousel.js"></script>
