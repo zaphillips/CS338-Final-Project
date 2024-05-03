@@ -1786,7 +1786,7 @@ Admin Page Style
 --------------------------------------------- 
 */
 
-.admin-page .container{
+.adminPage .container{
   margin-bottom: 40px;
   margin-left: auto;
   margin-right: auto;
@@ -1796,7 +1796,12 @@ Admin Page Style
   padding: 60px;
 }
 
-.admin-page .container form button{
+.adminPage .form {
+  display: flex;
+  flex-direction: column;
+}
+
+.adminPage .container .form button{
   display: flex;
   height: 50px;
   line-height: 50px;
@@ -1811,7 +1816,7 @@ Admin Page Style
   border-radius: 100px;
 }
 
-.admin-page .container form button:hover {
+.adminPage .container .form button:hover {
   background-color: #306959;
 }
 
