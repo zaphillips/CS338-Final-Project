@@ -100,37 +100,18 @@ https://templatemo.com/tm-589-lugx-gaming
     
   <div class="admin-page section">
     <div class="container">
-      <div class="row">
-          <div class="d-flex justify-content-center section-heading">
-            <h2>Admin Dashboard</h2>
-          </div>
-          <div>
-              <form method = "POST">
-                <div class="row"> 
-                  <button  id="buttons" name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
-                </div>
-                <div class="row"> 
-                  <button id="buttons" name = "tax" type="submit">Calculate Tax Incurred on Total Sales Made By Site</button>
-                </div>
-                <div class="row"> 
-                  <button id="buttons" name = "numProdSold" type="submit">Calculate Number of Games Sold</button>
-                </div>
-                <div class="row"> 
-                  <button id="buttons" name = "bestSellingProd" type="submit">Determine Best Selling Game</button>
-                </div>
-                <div class="row"> 
-                  <button id="buttons" name = "worstSellingProd" type="submit">Determine Worst Selling Game</button>
-                </div>
-                <div class="row"> 
-                  <button id="buttons" name = "visitors" type="submit" value="1">Calculate Total Visitors of the Site</button>
-                </div>
-                <div class="row"> 
-                  <button id="buttons" name = "testConn" type="submit">Test Connection with Apollo</button>
-                </div>
-              </form>
-          </div>
-        </div>
+      <div class="d-flex justify-content-center section-heading">
+        <h2>Admin Dashboard</h2>
       </div>
+      <form method = "POST">
+        <button name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
+        <button name = "tax" type="submit">Calculate Tax Incurred on Total Sales Made By Site</button>
+        <button name = "numProdSold" type="submit">Calculate Number of Games Sold</button>
+        <button name = "bestSellingProd" type="submit">Determine Best Selling Game</button>
+        <button name = "worstSellingProd" type="submit">Determine Worst Selling Game</button>
+        <button name = "visitors" type="submit" value="1">Calculate Total Visitors of the Site</button>
+        <button name = "testConn" type="submit">Test Connection with Apollo</button>
+      </form>
     </div>
   </div>
 

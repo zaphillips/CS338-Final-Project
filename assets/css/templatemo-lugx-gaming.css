@@ -1796,7 +1796,7 @@ Admin Page Style
   padding: 60px;
 }
 
-#buttons button{
+.admin-page .container form button{
   display: flex;
   height: 50px;
   line-height: 50px;
@@ -1811,7 +1811,7 @@ Admin Page Style
   border-radius: 100px;
 }
 
-#buttons button:hover {
+.admin-page .container form button:hover {
   background-color: #306959;
 }
 
