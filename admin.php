@@ -104,14 +104,14 @@ https://templatemo.com/tm-589-lugx-gaming
             <h2>Admin Dashboard</h2>
           </div>
           <div class="d-flex justify-content-center">
-              <div class="col-lg-12">
+              <div class="col-lg-12 justify-content-center margin:20px">
                 <fieldset>
                   <form method = "POST">
                     <button name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
                     <button name = "tax" type="submit">Calculate Tax Incurred on Total Sales Made By Site</button>
-                    <button name = "numProdSold" type="submit">Calculate Number of Products Sold</button>
-                    <button name = "bestSellingProd" type="submit">Determine Best Selling Product</button>
-                    <button name = "worstSellingProd" type="submit">Determine Worst Selling Product</button>
+                    <button name = "numProdSold" type="submit">Calculate Number of Games Sold</button>
+                    <button name = "bestSellingProd" type="submit">Determine Best Selling Game</button>
+                    <button name = "worstSellingProd" type="submit">Determine Worst Selling Game</button>
                     <button name = "visitors" type="submit" value="1">Calculate Total Visitors of the Site</button>
                     <button name = "testConn" type="submit">Test Connection with Apollo</button>
                   </form>
@@ -150,6 +150,8 @@ https://templatemo.com/tm-589-lugx-gaming
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
+      //Close Connection
+      $_POST = array();
       $conn->close();
     }
 
@@ -179,7 +181,8 @@ https://templatemo.com/tm-589-lugx-gaming
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
-      
+      //Close Connection
+      $_POST = array();
       $conn->close();
     }
 
@@ -204,12 +207,13 @@ https://templatemo.com/tm-589-lugx-gaming
 
       if ($result == TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert("Total Number of Products Sold: '. $record['Units'] .'")</script>';
+        echo '<script>alert("Total Number of Games Sold: '. $record['Units'] .'")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
-      
+      //Close Connection
+      $_POST = array();
       $conn->close();
     }
 
@@ -229,17 +233,18 @@ https://templatemo.com/tm-589-lugx-gaming
       }
 
       //Query
-      $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
+      $sql = "SELECT Title as 'Title', SoldUnits as 'SoldUnits' FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits DESC LIMIT 1";
       $result = $conn->query($sql);
 
       if ($result == TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert("'.$record['Title'].' was the best selling product with '. $record['SoldUnits'] .' units sold.")</script>';
+        echo '<script>alert("'.$record['Title'].' was the best selling game with '. $record['SoldUnits'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
-      
+      //Close Connection
+      $_POST = array();
       $conn->close();
     }
 
@@ -259,17 +264,18 @@ https://templatemo.com/tm-589-lugx-gaming
       }
 
       //Query
-      $sql = "SELECT Title, SoldUnits FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
+      $sql = "SELECT Title as 'Title', SoldUnits as 'SoldUnits' FROM sales AS a WHERE (SELECT MAX(SoldUnits) FROM sales AS b WHERE a.SoldUnits = b.SoldUnits) GROUP BY GameID ORDER BY SoldUnits ASC LIMIT 1";
       $result = $conn->query($sql);
       
-      if ($result === TRUE) {
+      if ($result == TRUE) {
         $record = mysqli_fetch_array($result);
-        echo '<script>alert("'.$record['Title'].' was the worst selling product with '. $record['SoldUnits'] .' units sold.")</script>';
+        echo '<script>alert("'.$record['Title'].' was the worst selling game with '. $record['SoldUnits'] .' units sold.")</script>';
         } else {
           $message = $conn->error;
           echo '<script>alert("Error Sending Query: '.$message.'")</script>';
       }
-      
+      //Close Connection
+      $_POST = array();
       $conn->close();
     }
     
@@ -301,6 +307,7 @@ https://templatemo.com/tm-589-lugx-gaming
       }
 
       //Close Connection
+      $_POST = array();
       $conn->close();
     }
   ?>
