@@ -106,7 +106,7 @@ https://templatemo.com/tm-589-lugx-gaming
       <div>
         <form  method = "POST">
           <button name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
-          <button name = "tax" type="submit">Calculate Tax Incurred on Total Sales Made By Site</button>
+          <button name = "tax" type="submit">Calculate Tax Incurred on Total Sales</button>
           <button name = "numProdSold" type="submit">Calculate Number of Games Sold</button>
           <button name = "bestSellingProd" type="submit">Determine Best Selling Game</button>
           <button name = "worstSellingProd" type="submit">Determine Worst Selling Game</button>
