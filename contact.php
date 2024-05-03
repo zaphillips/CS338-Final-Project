@@ -193,7 +193,7 @@ if ($fname != ""){
       echo '<script>alert("Error adding record: '. $conn->error.'")</script>';
   }
   $_POST = array();
-  echo '<script>location.reload();</script>';
+  echo '<script>location.reload();</script>'; //Refreshes the Page to Eliminate Data Duplication on Server
 }
 // $sql="INSERT INTO messages (fname, lname, email, subject, message) VALUES ('$fname','$lname', '$email', '$subject', '$message')";
 
@@ -206,10 +206,6 @@ if ($fname != ""){
 
 $conn->close();
 ?>
-<!-- Refreshes the Page to Eliminate Data Duplication on Server -->
-<script>
-  location.reload();
-</script>
 
   <footer>
     <div class="container">
