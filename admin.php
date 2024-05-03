@@ -99,13 +99,13 @@ https://templatemo.com/tm-589-lugx-gaming
   </div>
     
   <div class="login-page section">
-    <div class="container d-flex flex-column justify-content-center">
-      <div class="section-heading">
+    <div>
+      <div class="section-heading d-flex justify-content-center">
         <h2>Admin Dashboard</h2>
       </div>
       <div>
         <form  method = "POST">
-          <button class = "input" name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
+          <button class = "justify-content-center" name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
           <button class = "input" name = "tax" type="submit">Calculate Tax Incurred on Total Sales Made By Site</button>
           <button class = "input" name = "numProdSold" type="submit">Calculate Number of Games Sold</button>
           <button class = "input" name = "bestSellingProd" type="submit">Determine Best Selling Game</button>
