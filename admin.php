@@ -99,11 +99,11 @@ https://templatemo.com/tm-589-lugx-gaming
   </div>
     
   <div class="login-page section">
-    <div class="container">
+    <div class="container d-flex flex-column justify-content-center">
       <div class="section-heading">
         <h2>Admin Dashboard</h2>
       </div>
-      <div class = "container d-flex justify-content-center">
+      <div>
         <form  method = "POST">
           <button class = "input" name = "totalSales" type="submit">Calculate Total Sales of the Site</button>
           <button class = "input" name = "tax" type="submit">Calculate Tax Incurred on Total Sales Made By Site</button>
