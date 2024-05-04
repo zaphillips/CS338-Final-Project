@@ -85,7 +85,6 @@ https://templatemo.com/tm-589-lugx-gaming
       $result5 = $conn->query($sql5);
 
       if ($result0 == TRUE && $result1 == TRUE && $result2 == TRUE && $result3 == TRUE && $result4 == TRUE && $result5 == TRUE) {
-        // $record = mysqli_fetch_array($result);
         echo '<script>alert("Your order has been confirmed. Have a great rest of your day!")</script>';
         } else {
           $message = $conn->error;
@@ -124,8 +123,6 @@ https://templatemo.com/tm-589-lugx-gaming
                     <ul class="nav">
                       <li><a href="index.php" class="active">Home</a></li>
                       <li><a href="shop.html">Shop</a></li>
-                      <!-- <li><a href="product-details.html">Product Details</a></li> -->
-                      <!-- <li><a href="contact.html">Contact</a></li> -->
                       <li><a href="contact.php">Contact</a></li>
                       <li><a href="cart.php">Cart <i class="fa fa-shopping-bag"></i></a></li>
                       <li class="li-button" id ="nav-login"><a href="sign-in.html">Sign In</a></li>

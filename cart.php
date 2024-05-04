@@ -55,15 +55,13 @@ https://templatemo.com/tm-589-lugx-gaming
                 <nav class="main-nav">
                     <!-- ***** Logo Start ***** -->
                     <a href="index.php" class="logo">
-                        <img src="assets/images/logo.png" alt="">
+                        <img src="assets/images/logo.png" alt="Saga Logo">
                     </a>
                     <!-- ***** Logo End ***** -->
                     <!-- ***** Menu Start ***** -->
                     <ul class="nav">
                       <li><a href="index.php">Home</a></li>
                       <li><a href="shop.html">Shop</a></li>
-                      <!-- <li><a href="product-details.html">Product Details</a></li> -->
-                      <!-- <li><a href="contact.html">Contact</a></li> -->
                       <li><a href="contact.php">Contact</a></li>
                       <li><a href="cart.php" class="active">Cart <i class="fa fa-shopping-bag"></i></a></li>
                       <li class="li-button" id ="nav-login"><a href="sign-in.html">Sign In</a></li>
